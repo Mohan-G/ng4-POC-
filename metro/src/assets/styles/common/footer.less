@@ -1,0 +1,131 @@
+footer {
+    background: @brand-blue;
+    color: @white;
+    z-index: 0;
+    p,a{
+        color: @white;
+        font-size: @font-size-small;
+    }
+    .container {
+        margin: 0 auto;
+        padding-top: 40px;
+        ul{
+            list-style: none;
+            >li{
+                padding-bottom: 10px;
+            }
+        }
+        .subscribe-block{
+            max-width: 95%;
+            margin: 0 0 0 30px;
+            float: none;
+            @media @screen-md{
+                max-width: 90%;
+              margin:0;
+            }
+            @media @screen-md-lower{
+                margin: 0 auto;
+            }
+          i{
+            float: left;
+            margin-right: 8px;
+          }
+          p{
+            line-height: 22px;
+            font-size: @font-size-meidum;
+
+          }
+        }
+
+        .form-control{
+            border-top-left-radius:3px;
+            border-bottom-left-radius:3px;
+            height: 40px;
+        }
+        .input-group-addon{
+            border-top-right-radius:3px;
+            border-bottom-right-radius:3px;
+          padding:9px 5px 9px 10px;
+        }
+        input:focus::-webkit-input-placeholder
+        {
+            color: transparent;
+        }
+        input:focus::-moz-placeholder
+        {
+            color: transparent;
+        }
+        .horizontal{
+            width: 100%;
+            a.privacy{
+                color:@gray;
+                font-size: 11px;
+            }
+             a.privacy:hover{
+                color:@link-hover;
+                font-size: 11px;
+            }
+        }
+        .copy-right {
+            color:#B1B1B1;
+            padding-bottom:7px;
+            font-size: 10px;
+        }
+        .social-media {
+            color:#feffff;
+        }
+
+    }
+    @media (min-width: 750px) and (max-width: 979px) {
+        .container {
+            width: 670px;
+            ul{
+            width:100%;
+            }
+        .copy-right {
+                padding-bottom:17px;
+            }
+        }
+    }
+    @media (min-width: 580px) and (max-width: 749px) {
+        .container {
+            ul{
+            width:100%;
+            }
+            div:nth-child(2) {
+            border:none;
+            }
+            .copy-right {
+            padding-bottom:17px;
+        }
+        }
+    }
+        @media (min-width: 320px) and (max-width: 579px) {
+        .container {
+
+            ul{
+                width:100%;
+                }
+                div:nth-child(2) {
+                border:none;
+                }
+                .copy-right {
+                padding-bottom:17px;
+            }
+
+        }
+    }
+
+}
+#nina-metropcs{
+  background: white !important;
+}
+#nina-chat .nw_TitleBar span.col-xs-12 {
+	display:none !important;
+}
+#nina-chat .nw_TitleBar span.col-xs-6 {
+	top:0px !important;
+}
+
+
+

@@ -1,0 +1,81 @@
+@import "../common/shared/variables.less";
+@import "../common/shared/mixins.less";
+@import "../common/shared/elements.less";
+
+
+
+
+#megamenu {
+    .menuContent{
+        .container {
+            padding: 0;
+            &.slider{
+                overflow: hidden;
+                position: relative;
+                width: 100%;
+                .image-arrangement-loop(6);
+                .slide-item{
+                    position: absolute;
+                    top: 0;
+                    transition: all 0.4s ease;
+                    background-color: @card-gray;
+                    width: 205px;
+                    height: 455px;
+                    padding: 10px;
+                    box-shadow: -2px -2px 12px 1px rgba(0,0,0,.3);
+                    .title{
+                        font-size: @font-size-meidum;
+                        text-transform: capitalize;
+                        position : absolute;
+                        top: 20px;
+                        z-index : inherit;
+                    }
+					img {
+						position: relative;
+						top: 60px;
+					}
+                    .phone-display {
+                        height:400px;
+                    }
+                }
+            }
+            button{
+                z-index: 20;
+                border-radius: 0;
+            }
+            .banner-bold-text{
+                font-family: @font-family-Neue-Black;
+            }
+                
+                .phone-aside{
+                    background: url('@{content-dam-path}/mega-menu-plans-promobanner-background.png') repeat-x;
+                    height:412px;
+                    .phone-mob-wrap{  
+                        width:227px;
+                        margin:20px auto 0;                    
+                        h2{
+                            font-size: 42px;
+                            color:@brand-orange;
+                            font-family:@font-family-Neue-Black;
+                            line-height:42px;
+                            span{
+                                font-size: 47px;
+                            }   
+                        }
+                        h3{
+                            font-size:@font-size-p;
+                            color:@brand-blue;
+                            span{
+                                font-family:@font-family-Neue-Black;
+                            }     
+                        } 
+                        .mob-learn{
+                            font-family:@font-family-Neue-Bold-Cn;
+                            font-size:@font-size-p;
+                        } 
+                    }                
+                }
+            }
+    }
+        
+}

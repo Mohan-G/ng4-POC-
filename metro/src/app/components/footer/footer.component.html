@@ -1,0 +1,154 @@
+<footer class="stickypadd">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-lg-offset-1 col-xs-6">
+                <ul class="p-l-15 b-r">
+                    <!-- ngRepeat: leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink -->
+                    <li ng-repeat="leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;MetroPCS Careers&quot;,&quot;leftprimarylink&quot;:&quot;/careers/careers.html&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                        class="ng-scope" style="">
+                        <!-- ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' --><a ng-if="leftLinks.name != 'In English' &amp;&amp; leftLinks.name != 'En Español'" ng-href="/careers/careers.html" ng-click="commonFooterCtrl.openLinkInWindow(leftLinks.leftprimarylink, leftLinks.newtab,$event)" pdl_track_footernavigation="MetroPCS Careers"
+                            class="ng-binding ng-scope" href="/careers/careers.html">MetroPCS Careers</a>
+                        <!-- end ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' -->
+                        <!-- ngIf: leftLinks.name == 'In English' || leftLinks.name == 'En Español' -->
+                    </li>
+                    <!-- end ngRepeat: leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink -->
+                    <li ng-repeat="leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Deals&quot;,&quot;leftprimarylink&quot;:&quot;/shop/deals&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                        class="ng-scope">
+                        <!-- ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' --><a ng-if="leftLinks.name != 'In English' &amp;&amp; leftLinks.name != 'En Español'" ng-href="/shop/deals" ng-click="commonFooterCtrl.openLinkInWindow(leftLinks.leftprimarylink, leftLinks.newtab,$event)" pdl_track_footernavigation="Deals"
+                            class="ng-binding ng-scope" href="/shop/deals">Deals</a>
+                        <!-- end ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' -->
+                        <!-- ngIf: leftLinks.name == 'In English' || leftLinks.name == 'En Español' -->
+                    </li>
+                    <!-- end ngRepeat: leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink -->
+                    <li ng-repeat="leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;En Español&quot;,&quot;leftprimarylink&quot;:&quot;https://hola.metropcs.com/&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                        class="ng-scope">
+                        <!-- ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' -->
+                        <!-- ngIf: leftLinks.name == 'In English' || leftLinks.name == 'En Español' --><a ng-if="leftLinks.name == 'In English' || leftLinks.name == 'En Español'" ng-href="https://hola.metropcs.com/" mporgnav="" onclick="return switchLanguage('es');function switchLanguage(lang){MP.SrcUrl=decodeURIComponent('mp_js_orgin_url');MP.UrlLang='mp_js_current_lang';MP.init();MP.switchLanguage(MP.UrlLang==lang?'en':lang);return false;}"
+                            pdl_track_footernavigation="En Español" class="ng-binding ng-scope" href="https://hola.metropcs.com/">En Español</a>
+                        <!-- end ngIf: leftLinks.name == 'In English' || leftLinks.name == 'En Español' -->
+                    </li>
+                    <!-- end ngRepeat: leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink -->
+                    <li ng-repeat="leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;In English&quot;,&quot;leftprimarylink&quot;:&quot;/home&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;&quot;,&quot;mobile&quot;:&quot;&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;&quot;})"
+                        class="ng-scope hidden-lg hidden-md hidden-xs" style="">
+                        <!-- ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' -->
+                        <!-- ngIf: leftLinks.name == 'In English' || leftLinks.name == 'En Español' --><a ng-if="leftLinks.name == 'In English' || leftLinks.name == 'En Español'" ng-href="/home" mporgnav="" onclick="return switchLanguage('es');function switchLanguage(lang){MP.SrcUrl=decodeURIComponent('mp_js_orgin_url');MP.UrlLang='mp_js_current_lang';MP.init();MP.switchLanguage(MP.UrlLang==lang?'en':lang);return false;}"
+                            pdl_track_footernavigation="In English" class="ng-binding ng-scope" href="/home">In English</a>
+                        <!-- end ngIf: leftLinks.name == 'In English' || leftLinks.name == 'En Español' -->
+                    </li>
+                    <!-- end ngRepeat: leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink -->
+                    <li ng-repeat="leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Consumer Protection&quot;,&quot;leftprimarylink&quot;:&quot;/terms-conditions/consumer-protection-terms.html&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                        class="ng-scope">
+                        <!-- ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' --><a ng-if="leftLinks.name != 'In English' &amp;&amp; leftLinks.name != 'En Español'" ng-href="/terms-conditions/consumer-protection-terms.html" ng-click="commonFooterCtrl.openLinkInWindow(leftLinks.leftprimarylink, leftLinks.newtab,$event)"
+                            pdl_track_footernavigation="Consumer Protection" class="ng-binding ng-scope" href="/terms-conditions/consumer-protection-terms.html">Consumer Protection</a>
+                        <!-- end ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' -->
+                        <!-- ngIf: leftLinks.name == 'In English' || leftLinks.name == 'En Español' -->
+                    </li>
+                    <!-- end ngRepeat: leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink -->
+                    <li ng-repeat="leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Network Disclosure&quot;,&quot;leftprimarylink&quot;:&quot;/terms-conditions/network-disclosure.html&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                        class="ng-scope">
+                        <!-- ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' --><a ng-if="leftLinks.name != 'In English' &amp;&amp; leftLinks.name != 'En Español'" ng-href="/terms-conditions/network-disclosure.html" ng-click="commonFooterCtrl.openLinkInWindow(leftLinks.leftprimarylink, leftLinks.newtab,$event)"
+                            pdl_track_footernavigation="Network Disclosure" class="ng-binding ng-scope" href="/terms-conditions/network-disclosure.html">Network Disclosure</a>
+                        <!-- end ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' -->
+                        <!-- ngIf: leftLinks.name == 'In English' || leftLinks.name == 'En Español' -->
+                    </li>
+                    <!-- end ngRepeat: leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink -->
+                    <li ng-repeat="leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Press Center&quot;,&quot;leftprimarylink&quot;:&quot;/press/news-releases.html&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                        class="ng-scope hidden-xs" style="">
+                        <!-- ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' --><a ng-if="leftLinks.name != 'In English' &amp;&amp; leftLinks.name != 'En Español'" ng-href="/press/news-releases.html" ng-click="commonFooterCtrl.openLinkInWindow(leftLinks.leftprimarylink, leftLinks.newtab,$event)" pdl_track_footernavigation="Press Center"
+                            class="ng-binding ng-scope" href="/press/news-releases.html">Press Center</a>
+                        <!-- end ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' -->
+                        <!-- ngIf: leftLinks.name == 'In English' || leftLinks.name == 'En Español' -->
+                    </li>
+                    <!-- end ngRepeat: leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink -->
+                    <li ng-repeat="leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Make a Payment&quot;,&quot;leftprimarylink&quot;:&quot;/bill-pay.html&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                        class="ng-scope">
+                        <!-- ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' --><a ng-if="leftLinks.name != 'In English' &amp;&amp; leftLinks.name != 'En Español'" ng-href="/bill-pay.html" ng-click="commonFooterCtrl.openLinkInWindow(leftLinks.leftprimarylink, leftLinks.newtab,$event)" pdl_track_footernavigation="Make a Payment"
+                            class="ng-binding ng-scope" href="/bill-pay.html">Make a Payment</a>
+                        <!-- end ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' -->
+                        <!-- ngIf: leftLinks.name == 'In English' || leftLinks.name == 'En Español' -->
+                    </li>
+                    <!-- end ngRepeat: leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink -->
+                    <li ng-repeat="leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Order Support&quot;,&quot;leftprimarylink&quot;:&quot;/ordersupport&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                        class="ng-scope">
+                        <!-- ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' --><a ng-if="leftLinks.name != 'In English' &amp;&amp; leftLinks.name != 'En Español'" ng-href="/ordersupport" ng-click="commonFooterCtrl.openLinkInWindow(leftLinks.leftprimarylink, leftLinks.newtab,$event)" pdl_track_footernavigation="Order Support"
+                            class="ng-binding ng-scope" href="/ordersupport">Order Support</a>
+                        <!-- end ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' -->
+                        <!-- ngIf: leftLinks.name == 'In English' || leftLinks.name == 'En Español' -->
+                    </li>
+                    <!-- end ngRepeat: leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink -->
+                    <li ng-repeat="leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Contact Us&quot;,&quot;leftprimarylink&quot;:&quot;/contact-us.html&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                        class="ng-scope">
+                        <!-- ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' --><a ng-if="leftLinks.name != 'In English' &amp;&amp; leftLinks.name != 'En Español'" ng-href="/contact-us.html" ng-click="commonFooterCtrl.openLinkInWindow(leftLinks.leftprimarylink, leftLinks.newtab,$event)" pdl_track_footernavigation="Contact Us"
+                            class="ng-binding ng-scope" href="/contact-us.html">Contact Us</a>
+                        <!-- end ngIf: leftLinks.name != 'In English' && leftLinks.name != 'En Español' -->
+                        <!-- ngIf: leftLinks.name == 'In English' || leftLinks.name == 'En Español' -->
+                    </li>
+                    <!-- end ngRepeat: leftLinks in commonFooterCtrl.footerData.footer.leftprimarylink -->
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                <!-- ngIf: commonFooterCtrl.footerData.footer.rightprimarylink.length > 0 -->
+                <div ng-if="commonFooterCtrl.footerData.footer.rightprimarylink.length > 0" class="ng-scope" style="">
+                    <ul class="p-l-15 p-l-0-xs b-r b-sm-hidden b-xs-hidden">
+                        <!-- ngRepeat: rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink -->
+                        <li ng-repeat="rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Become a Dealer&quot;,&quot;rightprimarylink&quot;:&quot;/become-dealer.html&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                            class="ng-scope hidden-xs"><a ng-href="/become-dealer.html" ng-click="commonFooterCtrl.openLinkInWindow(rightLinks.rightprimarylink,rightLinks.newtab,$event)" class="ng-binding" href="/become-dealer.html">Become a Dealer</a></li>
+                        <!-- end ngRepeat: rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink -->
+                        <li ng-repeat="rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Rebate Center&quot;,&quot;rightprimarylink&quot;:&quot;/../track-rebate.html&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                            class="ng-scope"><a ng-href="/../track-rebate.html" ng-click="commonFooterCtrl.openLinkInWindow(rightLinks.rightprimarylink,rightLinks.newtab,$event)" class="ng-binding" href="/../track-rebate.html">Rebate Center</a></li>
+                        <!-- end ngRepeat: rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink -->
+                        <li ng-repeat="rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Wireless Emergency Alerts&quot;,&quot;rightprimarylink&quot;:&quot;/terms-conditions/wireless-emergency-alerts.html&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                            class="ng-scope"><a ng-href="/terms-conditions/wireless-emergency-alerts.html" ng-click="commonFooterCtrl.openLinkInWindow(rightLinks.rightprimarylink,rightLinks.newtab,$event)" class="ng-binding" href="/terms-conditions/wireless-emergency-alerts.html">Wireless Emergency Alerts</a></li>
+                        <!-- end ngRepeat: rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink -->
+                        <li ng-repeat="rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Investor Relations&quot;,&quot;rightprimarylink&quot;:&quot;http://investor.t-mobile.com/&quot;,&quot;newtab&quot;:&quot;on&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                            class="ng-scope"><a ng-href="http://investor.t-mobile.com/" ng-click="commonFooterCtrl.openLinkInWindow(rightLinks.rightprimarylink,rightLinks.newtab,$event)" class="ng-binding" href="http://investor.t-mobile.com/">Investor Relations</a></li>
+                        <!-- end ngRepeat: rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink -->
+                        <li ng-repeat="rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Interest Based Ads&quot;,&quot;rightprimarylink&quot;:&quot;/terms-conditions/metropcs-ad-options-for-your-device.html&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                            class="ng-scope"><a ng-href="/terms-conditions/metropcs-ad-options-for-your-device.html" ng-click="commonFooterCtrl.openLinkInWindow(rightLinks.rightprimarylink,rightLinks.newtab,$event)" class="ng-binding" href="/terms-conditions/metropcs-ad-options-for-your-device.html">Interest Based Ads</a></li>
+                        <!-- end ngRepeat: rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink -->
+                        <li ng-repeat="rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Site Map&quot;,&quot;rightprimarylink&quot;:&quot;/sitemap&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                            class="ng-scope hidden-xs"><a ng-href="/sitemap" ng-click="commonFooterCtrl.openLinkInWindow(rightLinks.rightprimarylink,rightLinks.newtab,$event)" class="ng-binding" href="/sitemap">Site Map</a></li>
+                        <!-- end ngRepeat: rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink -->
+                        <li ng-repeat="rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Activate&quot;,&quot;rightprimarylink&quot;:&quot;/account/activation.html&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                            class="ng-scope hidden-xs"><a ng-href="/account/activation.html" ng-click="commonFooterCtrl.openLinkInWindow(rightLinks.rightprimarylink,rightLinks.newtab,$event)" class="ng-binding" href="/account/activation.html">Activate</a></li>
+                        <!-- end ngRepeat: rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink -->
+                        <li ng-repeat="rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink" ng-class="commonFooterCtrl.showonDevice({&quot;name&quot;:&quot;Accessibility&quot;,&quot;rightprimarylink&quot;:&quot;/accessibility.html&quot;,&quot;newtab&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;minitablet&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;on&quot;})"
+                            class="ng-scope"><a ng-href="/accessibility.html" ng-click="commonFooterCtrl.openLinkInWindow(rightLinks.rightprimarylink,rightLinks.newtab,$event)" class="ng-binding" href="/accessibility.html">Accessibility</a></li>
+                        <!-- end ngRepeat: rightLinks in commonFooterCtrl.footerData.footer.rightprimarylink -->
+                    </ul>
+                </div>
+                <!-- end ngIf: commonFooterCtrl.footerData.footer.rightprimarylink.length > 0 -->
+            </div>
+            <div class="col-md-5 col-sm-12 col-xs-12 p-l-20-md p-l-10-xs p-r-10-xs">
+                <div class="subscribe-block col-lg-10 col-md-11 col-sm-12 p-t-25-sm p-t-20-xs">
+                    <p class="m-t-0 m-b-0 text-gold"><i class="icon-m_mail_press"></i> <span class="subscribe ng-binding">Subscribe to MetroNews™</span></p>
+                    <p class="m-t-0 m-b-15 ng-binding">Get the latest news alerts, special deals and more.</p>
+                    <div class="input-group"><input aria-label="email" class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="commonFooterCtrl.email" name="email" placeholder="Your Email"> <a class="input-group-addon btn text-gray" title="Email subcription"
+                            ng-disabled="!commonFooterCtrl.email.length || !commonFooterCtrl.emailValidation()" ng-class="!(commonFooterCtrl.emailValidation() &amp;&amp; commonFooterCtrl.email)?'text-gray':'btn-orange'" ng-click="!commonFooterCtrl.email.length || !commonFooterCtrl.emailValidation() || commonFooterCtrl.emailSignUpClick()"
+                            href="javascript:void(0)" aria-label="Email subcription link" disabled="disabled"><i class="icon-m_arrow2" ng-click="" pdl_track_footernavigation="NewsLetter Signup"></i></a></div>
+                    <!-- ngIf: !commonFooterCtrl.emailValidation() && commonFooterCtrl.email -->
+                    <ul class="horizontal m-t-20">
+                        <!-- ngRepeat: socialLink in commonFooterCtrl.footerData.footer.social -->
+                        <li class="m-r-25 ng-scope" ng-repeat="socialLink in commonFooterCtrl.footerData.footer.social" style=""><a ng-href="https://www.twitter.com/MetroPCS" class="text-gray" title="Visit us at Twitter" aria-label="Twitter" href="https://www.twitter.com/MetroPCS"><i ng-click="commonFooterCtrl.openLinkInWindow(socialLink.socialLink, socialLink.newtab,$event)" pdl_track_footernavigation="Twitter" class="icon-twitter"></i></a></li>
+                        <!-- end ngRepeat: socialLink in commonFooterCtrl.footerData.footer.social -->
+                        <li class="m-r-25 ng-scope" ng-repeat="socialLink in commonFooterCtrl.footerData.footer.social"><a ng-href="https://www.facebook.com/MetroPCS" class="text-gray" title="Visit us at Facebook" aria-label="Facebook" href="https://www.facebook.com/MetroPCS"><i ng-click="commonFooterCtrl.openLinkInWindow(socialLink.socialLink, socialLink.newtab,$event)" pdl_track_footernavigation="Facebook" class="icon-facebook"></i></a></li>
+                        <!-- end ngRepeat: socialLink in commonFooterCtrl.footerData.footer.social -->
+                        <li class="m-r-25 ng-scope" ng-repeat="socialLink in commonFooterCtrl.footerData.footer.social"><a ng-href="https://www.instagram.com/MetroPCS" class="text-gray" title="Visit us at Instagram" aria-label="Instagram" href="https://www.instagram.com/MetroPCS"><i ng-click="commonFooterCtrl.openLinkInWindow(socialLink.socialLink, socialLink.newtab,$event)" pdl_track_footernavigation="Instagram" class="icon-instagram"></i></a></li>
+                        <!-- end ngRepeat: socialLink in commonFooterCtrl.footerData.footer.social -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="col-xs-12 b-t m-t-25 p-t-15 m-t-0-xs m-t-0-sm">
+                    <ul class="horizontal text-center m-b-0">
+                        <li class="m-r-20"><a class="privacy ng-binding" ng-href="/terms-conditions/privacy.html" pdl_track_footernavigation="Privacy Policy" title="Read our Privacy Policy" ng-click="commonFooterCtrl.openLinkInWindow(commonFooterCtrl.footerData.footer.url, commonFooterCtrl.footerData.footer.newTab,$event)"
+                                href="/terms-conditions/privacy.html">Privacy Policy</a></li>
+                        <li><a class="privacy ng-binding" ng-href="/terms-conditions/terms-conditions-service.html" pdl_track_footernavigation="Terms &amp; Conditions" title="Read our Terms &amp; Conditions" ng-click="commonFooterCtrl.openLinkInWindow(commonFooterCtrl.footerData.footer.termsUrl, commonFooterCtrl.footerData.footer.termsnewTab,$event)"
+                                href="/terms-conditions/terms-conditions-service.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                    <p aria-label="© 2002-2017 T-Mobile USA, Inc. All rights reserved." tabindex="0" class="copy-right text-center ng-binding">© 2002-2017 T-Mobile USA, Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

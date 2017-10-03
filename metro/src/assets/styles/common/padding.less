@@ -1,0 +1,38 @@
+@import "shared/variables.less";
+@import "shared/mixins.less";
+@import "shared/elements.less";
+
+.padding-loop (@spacing-iterations);
+.padding-top-loop (@spacing-iterations);
+.padding-right-loop (@spacing-iterations);
+.padding-bottom-loop (@spacing-iterations);
+.padding-left-loop (@spacing-iterations);
+
+@media @screen-xs{
+	.padding-loop (@spacing-iterations; -xs);
+	.padding-top-loop (@spacing-iterations; -xs);
+	.padding-right-loop (@spacing-iterations; -xs);
+	.padding-bottom-loop (@spacing-iterations; -xs);
+	.padding-left-loop (@spacing-iterations; -xs);
+}
+@media @screen-sm{
+	.padding-loop (@spacing-iterations; -sm);
+	.padding-top-loop (@spacing-iterations; -sm);
+	.padding-right-loop (@spacing-iterations; -sm);
+	.padding-bottom-loop (@spacing-iterations; -sm);
+	.padding-left-loop (@spacing-iterations; -sm);
+}
+@media @screen-md{
+	.padding-loop (@spacing-iterations; -md);
+	.padding-top-loop (@spacing-iterations; -md);
+	.padding-right-loop (@spacing-iterations; -md);
+	.padding-bottom-loop (@spacing-iterations; -md);
+	.padding-left-loop (@spacing-iterations; -md);
+}
+@media @screen-lg{
+	.padding-loop (@spacing-iterations; -lg);
+	.padding-top-loop (@spacing-iterations; -lg);
+	.padding-right-loop (@spacing-iterations; -lg);
+	.padding-bottom-loop (@spacing-iterations; -lg);
+	.padding-left-loop (@spacing-iterations; -lg);
+}
