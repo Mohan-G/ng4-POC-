@@ -1,0 +1,979 @@
+@import "elements.less";
+
+.font-face(@fontName, @fontFile, @fontWeight: normal) {
+  @font-face {
+    font-family: @fontName;
+    src: url('fonts/@{fontFile}.eot');
+    src: url('fonts/@{fontFile}.eot?#iefix') format('embedded-opentype'),
+    url('fonts/@{fontFile}.woff2') format('woff2'),
+    url('fonts/@{fontFile}.woff') format('woff'),
+    url('fonts/@{fontFile}.ttf') format('truetype'),
+    url('fonts/@{fontFile}.svg#@{fontName}') format('svg');
+    font-weight: @fontWeight;
+    font-style: normal;
+  }
+}
+
+.em-size(@value, @context: @font-size-base ) {
+  font-size: (@value / @context) + 0em;
+}
+
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+  -webkit-animation: @name @duration @delay @ease;
+  -moz-animation:    @name @duration @delay @ease;
+  -ms-animation:     @name @duration @delay @ease;
+}
+
+// Gradients
+
+#gradient {
+
+  // Horizontal gradient, from left to right
+  //
+  // Creates two color stops, start and end, by specifying a color and position for each color stop.
+  // Color stops are not available in IE9 and below.
+  .horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+    background-image: -webkit-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); // Safari 5.1-6, Chrome 10+
+    background-image: -o-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); // Opera 12
+    background-image: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down
+  }
+
+  // Vertical gradient, from top to bottom
+  //
+  // Creates two color stops, start and end, by specifying a color and position for each color stop.
+  // Color stops are not available in IE9 and below.
+  .vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+    background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);  // Safari 5.1-6, Chrome 10+
+    background-image: -o-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);  // Opera 12
+    background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down
+  }
+
+  .directional(@start-color: #555; @end-color: #333; @deg: 45deg) {
+    background-repeat: repeat-x;
+    background-image: -webkit-linear-gradient(@deg, @start-color, @end-color); // Safari 5.1-6, Chrome 10+
+    background-image: -o-linear-gradient(@deg, @start-color, @end-color); // Opera 12
+    background-image: linear-gradient(@deg, @start-color, @end-color); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  }
+  .horizontal-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+    background-image: -webkit-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+    background-image: -o-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+    background-image: linear-gradient(to right, @start-color, @mid-color @color-stop, @end-color);
+    background-repeat: no-repeat;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+  }
+  .vertical-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+    background-image: -webkit-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+    background-image: -o-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+    background-image: linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+    background-repeat: no-repeat;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+  }
+  .radial(@inner-color: #555; @outer-color: #333) {
+    background-image: -webkit-radial-gradient(circle, @inner-color, @outer-color);
+    background-image: radial-gradient(circle, @inner-color, @outer-color);
+    background-repeat: no-repeat;
+  }
+  .striped(@color: rgba(255,255,255,.15); @angle: 45deg) {
+    background-image: -webkit-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+    background-image: linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+  }
+}
+
+// Progress bars
+.progress-bar-variant(@color) {
+  background-color: @color;
+
+  // Deprecated parent class requirement as of v3.2.0
+  .progress-striped & {
+    #gradient > .striped();
+  }
+}
+
+/* Added missing variables Starts */
+.m-right(@value) {
+  margin-right: @value;
+}
+.p-top(@value) {
+  padding-top: @value;
+}
+.m-bottom(@value) {
+  margin-bottom: @value;
+}
+.m-top(@value) {
+  margin-top: @value;
+}
+.m-left(@value) {
+  margin-left: @value;
+}
+
+/*Add radio color*/
+.radio-color-loop(){
+  .-(@i: length(@colorArrayName)) when (@i > 0) {
+  @name: extract(@colorArrayName, @i);
+  @color: extract(@colorArrayHex, @i);
+    &.radio-@{name}{
+      input[type="radio"]{
+        &:checked{
+          + label{
+            color: @color;
+            &::before{
+              border-color: @color;
+            }
+            &::after{
+              background-color: @color;
+            }
+          }
+        }
+      }
+      &.radio-full{
+        input[type="radio"]{
+          &:checked{
+            + label{
+              color: @color;
+              &::before{
+                border-color: @color;
+                background-color: @white;
+              }
+              &::after{
+                background-color: @color;
+              }
+            }
+          }
+        }
+        label{
+          &::before{
+            background-color: @color;
+            border: 1px solid @color;
+          }
+          &::after{
+            background-color: @color;
+          }
+        }
+      }
+    }
+
+    .-((@i - 1));
+  } .-;
+}
+
+.text-color-loop(){
+  .-(@i: length(@colorArrayName)) when (@i > 0) {
+  @name: extract(@colorArrayName, @i);
+  @color: extract(@colorArrayHex, @i);
+    &.text-@{name}{
+      color: @color;
+    }
+    .-((@i - 1));
+  } .-;
+}
+
+//margin-top-mixin
+.margin-loop (@i, @n: ~"") when (@i >= 0) {
+  .m-@{i}@{n} {
+    margin: ~"@{i}px";
+  }
+  .margin-loop(@i - 5, @n);
+}
+
+//margin-top-mixin
+.margin-top-loop (@i, @n: ~"") when (@i >= 0) {
+  .m-t-@{i}@{n} {
+    margin-top: ~"@{i}px";
+  }
+  .margin-top-loop(@i - 5, @n);
+}
+
+//margin-right-mixin
+.margin-right-loop (@i, @n: ~"") when (@i >= 0) {
+  .m-r-@{i}@{n} {
+    margin-right: ~"@{i}px";
+  }
+  .margin-right-loop(@i - 5, @n);
+}
+
+//margin-bottom-mixin
+.margin-bottom-loop (@i, @n: ~"") when (@i >= 0) {
+  .m-b-@{i}@{n} {
+    margin-bottom: ~"@{i}px";
+  }
+  .margin-bottom-loop(@i - 5, @n);
+}
+
+//margin-left-mixin
+.margin-left-loop (@i, @n: ~"") when (@i >= 0) {
+  .m-l-@{i}@{n} {
+    margin-left: ~"@{i}px";
+  }
+  .margin-left-loop(@i - 5, @n);
+}
+
+//padding-top-mixin
+.padding-loop (@i, @n: ~"") when (@i >= 0) {
+  .p-@{i}@{n} {
+    padding: ~"@{i}px";
+  }
+  .padding-loop(@i - 5, @n);
+}
+
+//padding-top-mixin
+.padding-top-loop (@i, @n: ~"") when (@i >= 0) {
+  .p-t-@{i}@{n} {
+    padding-top: ~"@{i}px";
+  }
+  .padding-top-loop(@i - 5, @n);
+}
+
+//padding-right-mixin
+.padding-right-loop (@i, @n: ~"") when (@i >= 0) {
+  .p-r-@{i}@{n} {
+    padding-right: ~"@{i}px";
+  }
+  .padding-right-loop(@i - 5, @n);
+}
+
+//padding-bottom-mixin
+.padding-bottom-loop (@i, @n: ~"") when (@i >= 0) {
+  .p-b-@{i}@{n} {
+    padding-bottom: ~"@{i}px";
+  }
+  .padding-bottom-loop(@i - 5, @n);
+}
+
+//padding-left-mixin
+.padding-left-loop (@i, @n: ~"") when (@i >= 0) {
+  .p-l-@{i}@{n} {
+    padding-left: ~"@{i}px";
+  }
+  .padding-left-loop(@i - 5, @n);
+}
+
+// //Rep-dash tablet margin-bottom mixin
+// .sm-margin-bottom-loop (@i) when (@i > 0) {
+//   .sm-m-b-@{i} {
+//     margin-bottom: ~"@{i}px";
+//   }
+//   .sm-margin-bottom-loop(@i - 1);
+// }
+
+// //Rep-dash desktop margin-bottom mixin for follow-up-full-details
+// .rd-md-margin-bottom-loop (@iterator:1) when(@iterator <= length(@rd-md-iterations)) {
+//   @name: extract(extract(@rd-md-iterations, @iterator),1);
+//   .md-m-b-@{name} {
+//     margin-bottom: ~"@{name}px";
+//   }
+//   .rd-md-margin-bottom-loop((@iterator + 1));
+// }
+
+
+.reference(@height) {
+  background-color: rgba(255, 198, 0, 0.5);
+  color: @white;
+  text-align: center;
+  height: @height;
+  line-height: @height;
+}
+
+.sr-only() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+.vertical-center() {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.vertical-center-abs() {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+}
+
+.compute-psd-line-height(@psd-font-size, @leading: 120%) {
+  line-height: unit((@leading/100) * @psd-font-size, px);
+}
+
+.range-track() {
+  width: @range-track-width;
+  height: @range-track-height;
+  cursor: pointer;
+  animate: 0.2s;
+}
+
+.range-thumb() {
+  border: @range-thumb-border-width solid @range-thumb-border-color;
+  height: @range-thumb-height;
+  width: @range-thumb-width;
+  border-radius: @range-thumb-radius;
+  background: @range-thumb-color;
+  cursor: pointer;
+}
+
+//============================================================
+//
+// linear-gradient
+//
+// @param dir                 :  top, left, 90deg
+// @param start-color         :  #000, rgba(255,255,255,0.5)
+// @param end-color           :  #000, rgba(255,255,255,0.5)
+//
+// NOTE: The direction for the IE gradient is automagically
+// worked out for you based either on the direction or the
+// angle that you pass in. Obviously it will only be a
+// horizontal or vertical gradient, but it's still awesome.
+//
+// ALSO: Support for rgba is covered in IE too. Values are
+// converted to aRGB.
+//
+// @example .linear-gradient(50deg,  #eee, #aaa); (IE auto included)
+//
+// OR
+//
+// @example .linear-gradient-multi(~'top, #eee 0%, #aaa 50%, #eee 100%');
+//          .linear-gradient-ie(top, #eee, #aaa);
+//
+//
+// @see http://dev.w3.org/csswg/css3-images/#linear-gradients
+//
+//============================================================
+
+.linear-gradient( @dir: top, @start-color: #eee, @end-color: #aaa ) {
+  background: -webkit-linear-gradient(@dir, @start-color 0%, @end-color 100%);
+  background: -moz-linear-gradient(@dir, @start-color 0%, @end-color 100%);
+  background: -ms-linear-gradient(@dir, @start-color 0%, @end-color 100%);
+  background: -o-linear-gradient(@dir, @start-color 0%, @end-color 100%);
+  background: linear-gradient(@dir, @start-color 0%, @end-color 100%);
+  .linear-gradient-ie( @dir, @start-color, @end-color);
+}
+
+.linear-gradient-multi( ... ) {
+  background-image: -webkit-linear-gradient(@arguments);
+  background-image: -moz-linear-gradient(@arguments);
+  background-image: -ms-linear-gradient(@arguments);
+  background-image: -o-linear-gradient(@arguments);
+  background-image: linear-gradient(@arguments);
+}
+
+.linear-gradient-ie( @dir, @start-color, @end-color) when (@dir = top),
+  not ( isstring(@dir) ) and ( @dir >= 225 ) and ( @dir < 315 ),
+  not ( isstring(@dir) ) and ( @dir >= -135 ) and ( @dir < -45 ) {
+  .linear-gradient-ie-filter(@start-color, @end-color, 0);
+}
+.linear-gradient-ie( @dir, @start-color, @end-color) when (@dir = right),
+  not ( isstring(@dir) ) and ( @dir >= 135 ) and ( @dir < 225 ),
+  not ( isstring(@dir) ) and ( @dir >= -225 ) and ( @dir < -135 ) {
+  .linear-gradient-ie-filter(@end-color, @start-color, 1);
+}
+.linear-gradient-ie( @dir, @start-color, @end-color) when (@dir = bottom),
+  not ( isstring(@dir) ) and ( @dir >= 45 ) and ( @dir < 135 ),
+  not ( isstring(@dir) ) and ( @dir >= -315 ) and ( @dir < -225 ) {
+  .linear-gradient-ie-filter(@end-color, @start-color, 0);
+}
+.linear-gradient-ie( @dir, @start-color, @end-color) when (@dir = left),
+  not ( isstring(@dir) ) and ( @dir >= 315 ) and ( @dir < 360 ),
+  not ( isstring(@dir) ) and ( @dir >= -45 ) and ( @dir < 45 ),
+  not ( isstring(@dir) ) and ( @dir < -315 ) and ( @dir >= -360 ) {
+  .linear-gradient-ie-filter(@start-color, @end-color, 1);
+}
+
+.linear-gradient-ie-filter(@start: #eee, @end: #aaa, @type: 1) {
+  @c-start: argb(@start);
+  @c-end:   argb(@end);
+  filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{c-start}', endColorstr='@{c-end}', GradientType=@{type})";
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{c-start}',endColorstr='@{c-end}',GradientType=@{type})";
+}
+
+.flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.inner-column(@base, @columns) {
+  width: 100% / @base * @columns;
+}
+
+//Margin
+.m-top(@px)    { margin-top: @px;    }
+.m-bottom(@px) { margin-bottom: @px; }
+.m-right(@px)  { margin-right: @px;  }
+.m-left(@px)   { margin-left: @px;   }
+//Padding
+.p-top(@px)    { padding-top: @px;    }
+.p-bottom(@px) { padding-bottom: @px; }
+.p-right(@px)  { padding-right: @px;  }
+.p-left(@px)   { padding-left: @px;   }
+
+.vertical-center-abs() {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+
+}
+//adding Mixins for payment-easy-pay.less and shop-order-payment.less
+
+.checkbox-payment-mixin(){
+  .co-checkbox input[type="checkbox"] + .checkbox {
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    min-height: 0;
+    background: url("@{common-path-pages}/images/mega-icon-sprite.png") no-repeat scroll -276px 2px @gray-light;
+  }
+  .co-checkbox input[type="checkbox"]:checked + .checkbox {
+    background-color: @brand-magenta;
+  }
+  .radioButtom {
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 13px;
+    margin-bottom:30px;
+  }
+  .radioButtom.textItem {
+    display: inline;
+    padding-left:11px;
+  }
+  .style-font {
+    font-size:12px;
+  }
+}
+//mixin for support-landing-page
+.support-landing-page-mixin(){
+  .alert-button {
+    a {
+      color: @white;
+    }
+    i {
+      color: @white;
+    }
+    .white {
+      color: @white;
+    }
+  }
+  .border {
+    border-bottom: 1px solid @item-border;
+  }
+}
+//mixins for support-landing-particular-mixin
+.support-landing-blade-mixin(){
+  .blade > .header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+  }
+}
+//mixin for account-setup
+.account-setup-mixin(){
+  .m-t-0-xs {
+    margin-top: 0px;
+  }
+  .m-t-10-xs {
+    margin-top: 10px;
+  }
+  .m-t-15-xs {
+    margin-top: 15px;
+  }
+  .n-p-r-xs {
+    padding-right: 0px;
+  }
+  .n-p-l-xs {
+    padding-left: 0px;
+  }
+  .m-b-15n-xs {
+    margin-bottom: -15px;
+  }
+  .m-b-25-xs {
+    margin-bottom: 25px;
+  }
+  .p-t-9-xs {
+    padding-top: 9px;
+  }
+  .p-t-17-xs {
+    padding-top: 17px;
+  }
+  .p-t-29-xs {
+    padding-top: 29px;
+  }
+  .p-b-50-xs {
+    padding-bottom: 50px;
+  }
+  .p-t-10-xs {
+    padding-top: 10px;
+  }
+  .p-t-13-xs {
+    padding-top: 13px;
+  }
+  .p-t-25-xs {
+    padding-top: 25px;
+  }
+  .carret-align {
+    padding-right: 16px;
+  }
+  .checkbox-text-align {
+    margin-top: -6px;
+  }
+}
+//mixin for support-device
+.support-device-mixin(){
+  .second-head {
+    margin-top: 40px;
+    .b-bottom {
+      border-bottom: 1px solid @item-border;
+      p:first-child {
+        margin: 0;
+      }
+      p {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+//mixin for coverage-map
+.coverage-map-mixin(){
+  .coverage-1 {
+    img {
+      max-width: 115px;
+      margin-top: 18px;
+    }
+  }
+  .coverage-2 {
+    img {
+      max-width: 211px;
+      margin-top: 19px;
+    }
+  }
+  .coverage-3 {
+    img {
+      max-width: 157px;
+    }
+  }
+  .h4-6 {
+    padding-right: 10%;
+  }
+}
+
+.payment-easy-autopay-mixin() {
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  .co-radio {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    padding-left: 0px;
+  }
+  .style-select {
+    font-size: 16px;
+  }
+  @media @screen-lg {
+    .tempSelect {
+      background: @gray-lighter;
+      height: 60px;
+      border: none;
+      width: 50%;
+      padding: 10px;
+    }
+  }
+  @media @screen-md {
+    .tempSelect {
+      background: @gray-lighter;
+      height: 60px;
+      border: none;
+      width: 80%;
+      padding: 10px;
+    }
+  }
+}
+
+//mixin for support-request-adjustment, support-return-payment-dispute and support-courtesy-credit
+.adjustment-paymentDispute-mixin() {
+  margin-top: 2px;
+  .close{
+    &:hover{
+      opacity:1;
+    }
+    position: relative;
+    display:block;
+    width:20px;
+    height:22px;
+    opacity:1;
+  }
+  .tmobile-button-icon{
+    left: 0;
+    position: absolute;
+    top: @mid-px;
+  }
+}
+
+
+//mixin for payment-arrangement ,shop payment and scheduled-activity-monitor
+.select2results-payment-schedule-shop-mixin() {
+  html[dir="rtl"] .select2-container .select2-choice .select2-arrow b {
+    background-position: 2px 1px;
+  }
+  .select2-container .select2-choice {
+    background: @gray-lighter;
+    color: inherit;
+
+    .select2-arrow {
+      background: none;
+      border-left-color: @item-border;
+      height: 38px;
+      line-height: 40px;
+      padding: 0 0 0 19px;
+      top: 3px;
+      width: 55px;
+      b {
+        width: 18px;
+      }
+    }
+  }
+  .select2-container .select2-choice > .select2-chosen {
+    margin-right: 60px;
+  }
+  .select2-dropdown-open .select2-choice .select2-arrow {
+    border-left: 1px solid @item-border;
+  }
+  .select2-drop-active {
+    background: @gray-lighter;
+    color: @gray-dark;
+  }
+  .select2-container {
+    .select2-choice {
+      border-width: 0;
+      border-radius: 0;
+      .select2-arrow b.downArrow {
+        background: url("@{common-path-pages}/images/mega-icon-sprite.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+        background-position: -293px -99px;
+        height: 28px;
+        margin-top: 10px;
+        width: 18px;
+      }
+    }
+  }
+  .select2-result-selectable .select2-match,
+  .select2-result-unselectable .select2-match {
+    text-decoration: underline;
+  }
+}
+
+//mixin for payment-arrangement and scheduled-activity-monitor
+.select2-results-payment-schedule-mixin(){
+  .select2-results {
+    max-height: 600px;
+    padding: 0 0 0 4px;
+    margin: 4px 4px 4px 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  html[dir="rtl"] .select2-results {
+    padding: 0 4px 0 0;
+    margin: 4px 0 4px 4px;
+  }
+  .select2-results ul.select2-result-sub {
+    margin: 0;
+    padding-left: 0;
+  }
+  .select2-results li {
+    border-bottom: 1px solid @gray-light;
+    padding: 10px 0px;
+  }
+  .select2-results li:hover {
+    background-color: @brand-magenta;
+    color: @white;
+  }
+  .select2-results li.select2-result-with-children > .select2-result-label {
+    font-weight: bold;
+  }
+  .select2-results .select2-result-label {
+    padding: 3px 7px 4px;
+    margin: 0;
+    cursor: pointer;
+    min-height: 1em;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+//mixin for scheduled-activity-module and shop-order-payment
+.scheduled-shop-order-mixin() {
+  .select2-container .select2-choice .select2-arrow {
+    display: inline-block;
+    width: 18px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-left: 1px solid@gray;
+    border-radius: 0 4px 4px 0;
+    background-clip: padding-box;
+    background: @gray-light;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, @gray), color-stop(0.6, @gray-lighter));
+    background-image: -webkit-linear-gradient(center bottom, @gray 0%, @gray-lighter 60%);
+    background-image: -moz-linear-gradient(center bottom, @gray 0%, @gray-lighter 60%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gray-lighter', endColorstr='@gray', GradientType=0);
+    background-image: linear-gradient(to top, @gray 0%, @gray-lighter 60%);
+  }
+  html[dir="rtl"] .select2-container .select2-choice .select2-arrow {
+    left: 0;
+    right: auto;
+    border-left: none;
+    border-right: 1px solid@gray;
+
+    border-radius: 4px 0 0 4px;
+  }
+}
+
+//mixins for support-return-exchange
+.support-return-mixin(){
+  .tertiaty-buttons .button-box{
+    color: @gray;
+    display: block;
+    height: 100%;
+    button{
+      background: none;
+      border: none;
+      color: @gray;
+      &.disabled{
+        color: @gray;
+      }
+      i{
+        font-size:20px;
+      }
+    }
+  }
+  .tradeInLabelsWidth{
+    width : 42.667%;
+  }
+  .tradeInDetailsWidth{
+    width : 57.333%;
+  }
+  .img {
+    -moz-opacity: 0.2;
+    -khtml-opacity: 0.2;
+    -webkit-opacity: 0.2;
+    opacity: 0.2;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+    filter: alpha(opacity=20);
+  }
+  .gray-lighter {
+    color: @gray-light;
+  }
+}
+
+//mixins for support-return-exchange and shop-cart
+.support-shop-cart(){
+  @media @screen-sm {
+    .m-l-30 {
+      margin-left: 34px;
+    }
+    .buttons-container .button-box {
+      display: block;
+      position: relative;
+      text-align: center;
+    }
+    .buttons-container .button-box:first-of-type {
+      top: 70px;
+    }
+    .buttons-container .button-box:nth-of-type(2) {
+      top: -70px;
+    }
+    .buttons-container .button-box:nth-of-type(2) .btn {
+      margin-bottom: 0;
+    }
+  }
+}
+
+//mixin for port in eligibility
+.account-portInEligibility-mixin() {
+  float: right;
+  height: 20px;
+  top: -88px;
+  width: 19px;
+  @media screen and (max-width: 647px) {
+    margin-right: -10px;
+    margin-top: 22px;
+  }
+  @media screen and (min-width: 647px) and (max-width: 941px) {
+    margin-right: -8px;
+    margin-top: 9px;
+  }
+  @media screen and (min-width: 940px) {
+    margin-top: 9px;
+  }
+}
+
+
+  // mixins common for payment-arrangement, payment-easy-pay and shop-order
+  .scanCredit-div-mixin() {
+    .scanCredit div > p {
+      margin-left: 10px;
+      line-height: 14px;
+    }
+    .scanCredit .icon-magenta-snap-pic {
+      margin: 0 1em 0 0;
+      border-right: 1px solid @gray-light;
+      padding: 0 2.9em 2.6em 0;
+      background-position: -45px -342px
+    }
+
+  }
+
+  // mixins common for payment-arrangement, payment-easy-pay and shop-order
+  .icon-question-mixin() {
+    .icon-question {
+      width: 30px;
+      height: 30px;
+      background-position: -45px -180px;
+    }
+  }
+
+  // mixins common for payment-arrangement, payment-easy-pay
+  .tempDDmargin-mixin() {
+    .tempDDmargin {
+      margin-top: 10px;
+    }
+    .small {
+      margin-bottom: 0;
+    }
+    .zip {
+      margin-top: 6px;
+    }
+  }
+
+//mixins for account-ban-to-ban, shop-order-payment
+.banToBan-ShopOrder-mixin(){
+  @media @screen-xs {
+      top: 60px;
+    }
+    .secondary-header {
+      float: left;
+      margin: 10px 0 0 25px;
+      h1, h2, h3, h4, h5, h6, p {
+        color: #ffffff;
+      }
+      .m-t-7n {
+        margin-top: -7px;
+        @media @screen-xs {
+          margin-top: 5px;
+        }
+      }
+      @media @screen-xs {
+        .m-t-4-xs {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+
+//mixins for shop-order-payment, shop-shipping-information
+.shop-shipping-payment-mixin() {
+  .arrow() {
+    bottom: 0px;
+    content: " ";
+    height: 0;
+    margin-left: -13px;
+    position: absolute;
+    width: 0;
+    top: @max-px*8;
+    border-bottom: @max-px solid #f5f5f5;
+    border-left: @max-px solid transparent;
+    border-right: @max-px solid transparent;
+  }
+}
+//mixins for mega menu phones
+.image-arrangement-loop (@i) when (@i > 0) {
+  .display-slider-@{i}{
+    .display-loop(@j, @space) when (@j > 0){
+      @newSpace: @space - (600 / @i);
+      @newSpacePer: (@newSpace / 600 )*100;
+      @newSpaceSlide: @newSpace - ((@j - 1) * 20);
+      @newSpaceSlidePer: (@newSpaceSlide / 600)*100;
+      @width: (100 / @i);
+      .slide-item:nth-child(@{j}) {
+        left: ~"@{newSpaceSlidePer}%";
+        z-index: 10 + @j;
+        .title{
+          width: ~"50%";
+        }
+        &:hover{
+          left: ~"@{newSpaceSlidePer}%";
+          cursor: pointer;
+        }
+      }
+      .display-loop(@j - 1, @newSpace);
+    }
+
+    .displayRightHover-loop(@k, @space) when (@k > 0){
+        @newNotSpace: @space - (600 / @i);
+        @newNotSpaceSlide: @newNotSpace + ((@i - (@k - 1)) * 20);
+      @newNotSpaceSlidePer: (@newNotSpaceSlide / 600)*100;
+        .slide-item{
+          &:hover{
+            ~.slide-item:nth-child(@{k}){
+              left: ~"@{newNotSpaceSlidePer}%" !important;
+            }
+          }
+        }
+      .displayRightHover-loop(@k - 1, @newNotSpace);
+    }
+
+    .displayLeftHover-loop(@l, @space) when (@l > 0){
+      @newLeftSpace: @space - (600 / @i);
+      @newLeftSpaceSlide: @newLeftSpace - ((@l - 1) * 20);
+      @newLeftSpaceSlidePer: (@newLeftSpaceSlide / 600)*100;
+      &.isActive{
+          > .slide-item:nth-child(@{l}){
+            left: ~"@{newLeftSpaceSlidePer}%";
+          }
+      }
+      .displayLeftHover-loop(@l - 1, @newLeftSpace);
+    }
+
+    .display-loop(@i, 600);
+    .displayRightHover-loop(@i, 600);
+    .displayLeftHover-loop(@i, 600);
+  }
+  .image-arrangement-loop(@i - 1);
+}
+
+.column-loop(@i) when (@i > 0) {
+  @width: (100 / @i);
+  .column.columns-@{i}{
+    > *{
+      width: ~"@{width}%";
+    }
+  }
+  .column-loop(@i - 1);
+}

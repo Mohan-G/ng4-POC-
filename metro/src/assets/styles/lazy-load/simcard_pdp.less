@@ -1,0 +1,168 @@
+@import "../common/shared/variables.less";
+@import "../common/shared/mixins.less";
+@import "../common/shared/elements.less";
+
+#simcard-pdp {
+
+    //==================== [Element name] ====================
+
+    @media @screen-xs {
+    }
+    @media @screen-sm {
+    }
+    @media @screen-md {
+    }
+    @media @screen-lg {
+    }
+    @media @screen-sm-upper {
+    }
+    @media @screen-md-upper {
+    }
+    @media @screen-sm-lower{
+    }
+    @media @screen-md-lower{
+    }
+}
+.sim-banner-wrap {
+    /* background: url("../../images/sim-banner-bg.png") no-repeat @gray-lighter; */
+    .bring-content-wrap{
+        margin: 150px 0 0 13%;
+        h1{
+            color:@brand-gold;
+        }
+        h2{
+            color:@brand-blue;
+            font-size:21px;
+        }
+    }
+    .btn{
+        border-radius:2px;
+    }
+}
+.support-wrap{
+    .content-wrapper{
+        min-height: 70px;
+        p{
+            font-family:@font-family-Neue-Bold-Cn;
+            font-size:@font-size-small;
+            color:@gray-darker;
+            letter-spacing: 1px;
+        }
+        i{
+            position: relative;
+        }
+        .ico-m-4glte-full{
+            top: 7px;
+        }
+        .ico-m-no-contract{
+            top: 6px;
+        }
+    }
+}
+.compatible-wrap{
+    background:@card-gray;
+    padding-bottom:3px;
+    min-height: 283px;
+    @media @screen-md{
+      min-height:325px;
+    }
+
+    h6 {
+        text-transform: none;
+    }
+    .circle-bg{
+        background:@gray-e2;
+        border-radius: 50%;
+        width:111px;
+        height:111px;
+        margin:0px auto 10px;
+        i{
+            font-size: 58px;
+        }
+    }
+    .compatible-section{
+        h6 {
+            color: #00b343;
+        }
+        .circle-bg{
+            background:#dbede2;
+            i{
+               color:#00b343;
+            }
+        }
+    }
+    .not-compatible-section{
+        h6 {
+            color: #bd0909;
+        }
+        .circle-bg{
+            background:#f4e0e0;
+        }
+    }
+}
+.group-banner{
+    background:url( '@{content-dam-path-phones}/group-banner.jpg') no-repeat 0 0/cover ;
+    @media @screen-xs {
+        .font-neue-bold-cn{
+            font-size: 15px;
+        }
+        .data-phone{
+            max-width: 70%;
+        }
+    }
+}
+@media @screen-md-lower {
+    .sim-banner-wrap {
+        background-position: 88% 0;
+        text-align:center;
+        .bring-content-wrap{
+            margin:12px 0 0;
+            h1{
+                font-size:18px;
+            }
+            h2{
+                font-size:12px;
+            }
+        }
+
+    }
+    .support-wrap   {
+        .content-wrapper{
+            min-height:110px;
+            .ico-m-4glte-full{
+                line-height: 40px;
+            }
+            .inline-block{
+                text-align:center;
+                width: 100%;
+            }
+        }
+    }
+    .compatible-wrap{
+
+        .not-compatible-section,.compatible-section{
+            text-align: center;
+            .circle-bg{
+                margin: 0 auto 10px;
+            }
+        }
+
+        min-height: 325px;
+
+    }
+
+
+}
+
+    .sim-description {
+        height:178px;
+        @media @screen-md{
+        	height:221px;
+    	}
+    	@media @screen-xs {
+      		height: 303px;
+    	}
+	}
+    .sim-description-column {
+     height :178px
+ }

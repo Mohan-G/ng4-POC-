@@ -1,0 +1,38 @@
+@import "shared/variables.less";
+@import "shared/mixins.less";
+@import "shared/elements.less";
+
+.margin-loop (@spacing-iterations);
+.margin-top-loop (@spacing-iterations);
+.margin-right-loop (@spacing-iterations);
+.margin-bottom-loop (@spacing-iterations);
+.margin-left-loop (@spacing-iterations);
+
+@media @screen-xs{
+	.margin-loop (@spacing-iterations; -xs);
+	.margin-top-loop  (@spacing-iterations; -xs);
+	.margin-right-loop (@spacing-iterations; -xs);
+	.margin-bottom-loop (@spacing-iterations; -xs);
+	.margin-left-loop (@spacing-iterations; -xs);
+}
+@media @screen-sm{
+	.margin-loop (@spacing-iterations; -sm);
+	.margin-top-loop  (@spacing-iterations; -sm);
+	.margin-right-loop (@spacing-iterations; -sm);
+	.margin-bottom-loop (@spacing-iterations; -sm);
+	.margin-left-loop (@spacing-iterations; -sm);
+}
+@media @screen-md{
+	.margin-loop (@spacing-iterations; -md);
+	.margin-top-loop  (@spacing-iterations; -md);
+	.margin-right-loop (@spacing-iterations; -md);
+	.margin-bottom-loop (@spacing-iterations; -md);
+	.margin-left-loop (@spacing-iterations; -md);
+}
+@media @screen-lg{
+	.margin-loop (@spacing-iterations; -lg);
+	.margin-top-loop  (@spacing-iterations; -lg);
+	.margin-right-loop (@spacing-iterations; -lg);
+	.margin-bottom-loop (@spacing-iterations; -lg);
+	.margin-left-loop (@spacing-iterations; -lg);
+}
