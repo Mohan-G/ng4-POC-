@@ -1,0 +1,475 @@
+@import "../common/shared/variables.less";
+@import "../common/shared/mixins.less";
+@import "../common/shared/elements.less";
+
+#whymetro-thumbnails-android { 
+	//==================== [Element name] ====================
+	p {
+		margin-bottom: 0px;
+	}
+	.pos-b-0 {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		.active::before {
+			content: "";
+			left: 46%;
+			bottom: 0;
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 10px solid white;
+		}
+	}
+	.thumb-hover {
+		cursor: pointer;
+	}
+	.thumb-hover.active::before {
+		content: "";
+		left: 42%;
+		top: -15px;
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 15px solid transparent;
+		border-right: 15px solid transparent;
+		border-bottom: 15px solid white;
+	}
+	.thumb-hover.active::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 5px;
+		background: rgba(50, 44, 148, 0.9);
+	}
+	.fnt-cir-txt {
+		font-size: 14px;
+		cursor: pointer;
+	}
+	.active {
+		.fnt-cir-txt {
+			color: @brand-gold;
+			
+		}
+		.ic-circle {
+			.ico {
+				color: @brand-gold;
+			}
+		}
+		.pos-b-30 {
+			bottom: -21px;
+			font-size: 30px;
+			left: 40%;
+			position: absolute;
+		}
+	}
+	.whymetro-banner-bg {
+		background-image: url("/content/dam/mpcs/whymetro/blue-banner-bg.jpg");
+		min-height: 300px;
+		position: relative;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+	.whymetro-map-bg {
+		background-image: url("/content/dam/mpcs/whymetro/whymetro-map-bg.jpg");
+		min-height: 760px;
+		position: relative;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+	.whymetro-offers-bg {
+		background-image: url("/content/dam/mpcs/whymetro/why-metro-bg-colage.jpg");
+		min-height: 325px;
+		position: relative;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+	.m-t-35-145 {
+		margin-top: 145px;
+	}
+	.m-b-15-55 {
+		margin-bottom: 55px;
+	}
+	.font-62-82 {
+		font-size: 82px;
+		line-height: 69px;
+	}
+	.font-12-16 {
+		font-size: 16px;
+	} 
+	.p-t-125 {
+		padding-top: 125px;
+	}
+	.m-b-75 {
+		margin-bottom: 75px;
+	}
+	.width-190 {
+		width: 190px;
+	}
+	.ic-circle {
+		background-color: @white;
+		border-radius: 50px;
+		font-size: 45px;
+		height: 82px;
+		margin: 0 auto 10px;
+		width: 82px;
+		cursor: pointer;
+	}
+	.font-neue-roma {
+		font-family: @font-family-Neue-Roma;
+	}
+	.font-117 {
+		font-size: 117px;
+		line-height: 82px;
+		sup {
+			top: -0.8em;
+		}
+	}
+	.font-43 {
+		font-size: 43px;
+		line-height: 43px;
+	}
+	.font-88 {
+		font-size: 88px;
+		line-height: 88px;
+	}
+	.font-50 {
+		font-size: 50px;
+		line-height: 50px;
+	}
+	.font-23 {
+		font-size: 23px;
+		font-size: 23px;
+	}
+	.font-20 {
+		font-size : 20px;
+	}
+	.font-82 {
+		font-size: 82px;
+		line-height: 69px;
+	}
+	.line-ht-32 {
+		line-height: 32px;
+	}
+	.line-ht-20 {
+		line-height: 20px;
+	}
+	.border-3 {
+		border-bottom: 3px solid @brand-gold;
+	}
+	.txt-overlap {
+		position: relative;
+		top: -15px;
+	}
+	.unlimeted-txt {
+		line-height: 32px;
+	}
+	.data-section {
+		p {
+			font-family: @font-family-Neue-Black;
+		}
+		sup {
+			top: -1em;
+		}
+		.period-txt {
+			font-size: 17px;
+			margin-top: -12px;
+		}
+	}
+
+	/*Tab-content Begin*/
+	
+	.tab-content {
+		margin: 0 auto;
+		width: 470px;
+		.whymetro-tab {
+			background: #cdced0;
+			font-size: @font-size-base;
+			height: 60px;
+			a {
+				padding-top: 20px;
+				padding-bottom: 17px;
+				color: @brand-blue;
+				font-family: @font-family-Neue-Bold-Cn;
+			}
+			a:hover,
+			a:focus {
+				background: @white;
+				color: @brand-gold;
+			}
+		}
+		.active {
+			background: @white;
+			height: 70px;
+			margin-top: -10px;
+			a {
+				padding-top: 30px;
+				color: @brand-blue;
+			}
+		}
+	}
+	.no-radius {
+		border-radius: 0px;
+	}
+	.whymetro-thumbnail {
+		.thumbnail-caption-img {
+			margin-top: 7px;
+		}
+		.active {
+			position: relative;
+			background: @white;
+			+ .thumbnail-caption {
+				color: @brand-blue;
+				margin-top: 3px;
+			}
+		}
+		.active:before,
+		.active:after {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-color: transparent;
+			border-bottom: 0;
+		}
+		.active:before {
+			top: -10px;
+			left: 50%;
+			margin-left: -10px;
+			border-top-color: @blue-light;
+			border-width: 10px;
+			-ms-transform: rotate(180deg);
+			-webkit-transform: rotate(180deg);
+			transform: rotate(180deg);
+		}
+		.active:after {
+			top: -9px;
+			left: 50%;
+			margin-left: -10px;
+			border-top-color: @white;
+			border-width: 10px;
+			-ms-transform: rotate(180deg);
+			-webkit-transform: rotate(180deg);
+			transform: rotate(180deg);
+		}
+		.active img {
+			position: relative;
+			border: 1px solid @blue-light;
+			background: @white;
+			+ .thumbnail-caption {
+				color: @brand-blue;
+			}
+		}
+		.active img:before,
+		.active img:after {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-color: transparent;
+			border-bottom: 0;
+		}
+		.active img:before {
+			top: -10px;
+			left: 50%;
+			margin-left: -10px;
+			border-top-color: @blue-light;
+			border-width: 10px;
+			-ms-transform: rotate(180deg);
+			-webkit-transform: rotate(180deg);
+			transform: rotate(180deg);
+		}
+		.active img:after {
+			top: -9px;
+			left: 43%;
+			border-top-color: @white;
+			border-width: 10px;
+			-ms-transform: rotate(180deg);
+			-webkit-transform: rotate(180deg);
+			transform: rotate(180deg);
+		}
+	}
+	@media @screen-xs {
+		.p-t-12-xs {
+			padding-top: 12px;
+		} 
+		.fnt-cir-txt {
+			font-size: 12px;
+		}
+		.m-b-15-55 {
+			margin-bottom: 15px;
+		}
+		.m-t-35-145 {
+			margin-top: 35px;
+		}
+		.whymetro-offers-bg {
+			background-image: url("/content/dam/mpcs/whymetro/why-metro-xs-colage.png");
+			min-height: 300px;
+		}
+		.whymetro-map-bg {
+			background-image: url("/content/dam/mpcs/whymetro/whymetro-map-bg-xs.png");
+			min-height: 655px;
+		}
+		.ic-circle {
+			background-color: @white;
+			border-radius: 50px;
+			font-size: 30px;
+			height: 60px;
+			margin: 0 auto 10px;
+			width: 60px;
+		}
+		.text-center-xs {
+			text-align: center;
+		}
+		.font-xs-18 {
+			font-size: 18px;
+			line-height: 18px;
+		}
+		.font-xs-15 {
+			font-size: 15px;
+			line-height: 15px;
+		}
+		.font-xs-12 {
+			font-size: 12px;
+			line-height: 12px;
+		}
+		.font-xs-57 {
+			font-size: 57px;
+			line-height: 57px;
+		}
+		.font-xs-62 {
+			font-size: 62px;
+			line-height: 62px;
+		}
+		.whymetro-thumbnail {
+			margin: 0px;
+			padding: 0px;
+			.active {
+				position: relative;
+				background: @white;
+				+ .thumbnail-caption {
+					margin-top: 6px;
+				}
+			}
+			.active:before {
+				top: -8px;
+				left: 50%;
+				border-width: 8px;
+			}
+			.active:after {
+				border-width: 8px;
+				left: 50%;
+				top: -7px;
+			}
+			.thumbnail-caption {
+				font-size: @font-size-h6-750;
+			}
+			.thumbnail-caption-img img {
+				max-height: 12px;
+			}
+		}
+		.tab-content {
+			width: auto;
+		}
+	}
+	@media @screen-sm {}
+	@media @screen-md {
+		.whymetro-thumbnail .active + .thumbnail-caption {
+			margin-top: 5px;
+		}
+	}
+	@media @screen-lg {}
+	@media @screen-sm-upper {
+		.border-r-desk {
+			border-right: 1px solid #fff;
+		}
+	}
+	@media @screen-md-upper {}
+	@media @screen-sm-lower {}
+	@media @screen-md-lower {
+		.pos-b-0 {
+			.active::before {
+				content: "";
+				left: 42%;
+			}
+		}
+		.font-62-82 {
+			font-size: 62px;
+			line-height: 62px;
+		}
+		.font-12-16 {
+			font-size: 12px;
+		}
+		.whymetro-banner-bg {
+			background-size: auto;
+			background-position: 100% 65%;
+			min-height: 262px;
+		}
+		.unlimeted-txt {
+			font-size: @font-size-meidum;
+			line-height: 14px;
+		}
+		.font-8-lower {
+			font-size: @font-size-xxsmall;
+		}
+		.cuz-lower-count {
+			font-size: 49px;
+			line-height: 40px;
+			sup {
+				font-size: 28px;
+				top: -0.4em;
+				line-height: 28px;
+			}
+		}
+		.txt-overlap {
+			font-size: @font-size-lead;
+			line-height: 20px;
+			top: -11px;
+		}
+		.annual-txt {
+			font-size: 12px;
+			line-height: 16px;
+			margin: 0 auto;
+			width: 280px;
+		}
+		.metro-wireless {
+			width: 130px;
+		}
+		.data-section {
+			img {
+				float: right;
+			}
+			.period-sm {
+				margin: 0 auto;
+				width: 130px;
+			}
+			.plan-sect {
+				float: left;
+				padding-left: 7px;
+			}
+			p {
+				font-size: 39px;
+			}
+			sup {
+				top: -1em;
+				font-size: 15px;
+			}
+			.period-txt {
+				font-size: 14px;
+				margin-top: -15px;
+			}
+		}
+		.simple-wrap {
+			text-align: center;
+			p {
+				font-size: 15px;
+			}
+		}
+	}
+}

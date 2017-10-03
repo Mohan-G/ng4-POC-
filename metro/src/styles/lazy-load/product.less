@@ -1,0 +1,1158 @@
+@import "../common/shared/variables.less";
+@import "../common/shared/mixins.less";
+@import "../common/shared/elements.less";
+
+/* common section begin */
+
+
+/* filter dropdown starts here */
+
+.filter-tab {
+    > .active {
+        box-shadow: none;
+        .drop-arrow {
+            color: @brand-orange;
+            -ms-transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+        & .filter-head,
+        .sort-txt {
+            color: @brand-blue;
+        }
+        /*&:hover {
+            background-color: @white;
+        }
+        &:focus {
+            background-color: @white;
+        }*/
+    }
+}
+
+.m-t-4 {
+    margin-top: 4px;
+}
+
+.btn-filter {
+    height: 35px;
+    border-radius: 3px;
+    border: 1px solid #b1b1b1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "HelveticaNeueW01-77BdCn_692722", "HelveticaNeueW01-45Ligh", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    & .caret {
+        margin-left: 5px;
+    }
+}
+
+.btn-filter1 {
+    width: 100%;
+    border-radius: 3px;
+    background-color: @white;
+    border: 1px solid #b1b1b1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    & .filter-head {
+        position: relative;
+        font-family: "HelveticaNeueW01-77BdCn_692722", "HelveticaNeueW01-45Ligh", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 18px;
+        color: @brand-blue;
+    }
+}
+
+.blade-filter {
+    position: relative;
+    & .caret {
+        position: absolute;
+        right: 15px;
+        top: 2px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px dashed;
+    }
+    & .active,
+    .drop-arrow {
+        color: @brand-orange;
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+.filter-selected {
+
+    & .btn {
+        margin-bottom: 0;
+        margin-left: 2px;
+      z-index: 20;
+      position: relative;
+    }
+}
+
+.dropdown{
+  > button.dropdown-toggle{
+    position: relative;
+    z-index: 14;
+  }
+}
+
+.dropdown-button-custom{
+  position: initial;
+}
+
+.dropdown-menu.dropdown-custom,
+.mega-dropdown {
+    z-index: 12;
+    padding: 0;
+    left: 0;
+    width: 100%;
+    &.block{
+      display: block;
+      top:-12px;
+    }
+    & .header {
+        background-color: #f4f4f4;
+        width: 100%;
+        position: absolute;
+        height: 50px;
+        top: -47px;
+        -webkit-box-shadow: 3px -5px 12px -3px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 3px -5px 12px -3px rgba(0, 0, 0, 0.2);
+        box-shadow: 3px -5px 12px -3px rgba(0, 0, 0, 0.2);
+    }
+    & .body {
+        background-color: #f4f4f4;
+       /* width: 49%;*/
+        position: relative;
+        top: -5px;
+       /* -webkit-box-shadow: 3px 6px 13px -3px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 3px 6px 13px -3px rgba(0, 0, 0, 0.2);
+        box-shadow: 3px 6px 13px -3px rgba(0, 0, 0, 0.2);*/
+        font-size: @font-size-small;
+        & .icon-m_close-circle::before {
+            background: #333092 none repeat scroll 0 0;
+            border-radius: 50%;
+            color: #fff;
+            content: "";
+            font-size: 13px;
+            position: relative;
+            top: 0px;
+        }
+    }
+}
+
+.co-checkbox {
+    display: inline-block;
+    line-height: 10px;
+    height: 10px;
+    position: relative;
+    float: left;
+    input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        z-index: 1;
+        .opacity(0);
+        & + .checkbox {
+            display: inline-block;
+            position: relative;
+            z-index: 0;
+            width: 15px;
+            height: 15px;
+            border: 1px solid @gray-dark;
+            text-align: center;
+            border-radius: 3px;
+            margin: 0;
+            i {
+                display: none;
+                float: left;
+                color: @brand-blue;
+                margin-left: 1px;
+                font-size: 11px;
+                .vertical-center();
+            }
+        }
+        &:checked + .checkbox {
+            background: @white;
+            border: 1px solid @brand-blue;
+            i {
+                display: inline-block;
+            }
+        }
+        &:disabled + .checkbox {
+            background: @gray-dark;
+            i {
+                display: none;
+            }
+        }
+    }
+}
+
+span.note {
+  &.active {
+    color: @brand-blue;
+  }
+  &.inactive {
+    color: #B1B1B1;
+    cursor: not-allowed;
+  }
+}
+
+
+.filter-dropdown {
+    & ul {
+        padding: 0 10px;
+        margin-bottom: 0px;
+    }
+    & li {
+        padding: 10px 0;
+        border-bottom: 1px solid #f4f4f4;
+        text-align: left;
+        text-transform: capitalize;
+    }
+    & li:first-child {
+        padding-top: 5px;
+    }
+    & ul:last-child {
+        li:last-child{
+         border-bottom: none;
+         padding-bottom: 0px;
+       }
+    }
+    & label {
+        font-weight: normal;
+        margin-bottom: 2px;
+        line-height: 24px;
+        width: 88%;
+        word-break: break-all;
+      &.active{
+        color: @brand-blue;
+      }
+    }
+}
+
+a {
+    cursor: pointer;
+}
+
+/* Mobile dropdown UI Fix */
+
+.mob-filter-dropdown {
+    @media @screen-sm-lower {
+        width: 200%;
+        background-color: @white;
+    }
+}
+
+.mob-filter-dropdown-header {
+    @media @screen-sm-lower {
+        width: 50% !important;
+    }
+}
+
+/* filter dropdown ends here */
+
+
+/* Phones compare bottom section starts here */
+
+.compare-collapse {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 -4px 7px -4px rgba(0, 0, 0, 0.125);
+    cursor: pointer;
+    font-size: @font-size-p;
+    position: relative;
+    text-align: center;
+    width: 10%;
+    margin-top: 20px;
+    z-index: 11;
+    .fa-chevron-down {
+        color: #f89c29;
+        display: inline-block;
+    }
+}
+
+.compare-wrapper {
+    background-color: @white;
+    position: relative;
+    font-size: @font-size-small;
+
+    .comparison-item {
+        background-color: @gray-lighter;
+        border: 1px solid @gray-light;
+        border-radius: 3px;
+        padding: 5px 0;
+        position: relative;
+        text-align: center;
+        width: 105px;
+        height: 75px;
+        margin: 0 auto;
+        .grey-mobile {
+            position: relative;
+            top: 15%;
+        }
+        .items-shadow {
+            box-shadow: 1px 1px 2px 0 rgba(47, 47, 47, 0.8);
+            top: -8px;
+            font-size: 4px;
+        }
+    }
+
+    .add-phone {
+        margin-bottom : 224px;
+    }
+	.compare-tray-table{
+		th{
+			border-top: 0;
+		}
+		.sticky-price-top{
+			position: fixed;
+			background-color: white;
+			width: 100%;
+			.add-phone {
+				margin-bottom : 0;
+			}
+		}
+	}
+
+}
+#compareContainer{
+	.table>thead>tr {
+		>th {
+			border-bottom: none;
+		}
+		border-bottom: 2px solid #ddd;
+	}
+.sticky-top-mob{
+	position: fixed;
+	z-index: 999;
+		top: 0px;
+    @media @screen-xs{
+      top: 8.4%;
+    }
+    @media only screen and (min-width:400px) and (max-width: 736px) {
+      top:9%;
+    }
+	margin-left: 0;
+	margin-right: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background: white;
+}
+
+/*tablets*/
+		@media @screen-md {
+		.sticky-price-top{
+			top: 91px;
+				.sticky-top-add-phone {
+					visibility: hidden;
+				}
+		}
+	}
+/*desktop*/
+		@media @screen-lg-upper {
+		.sticky-price-top{
+			top: 107px;
+				.sticky-top-add-phone {
+					visibility: hidden;
+				}
+		}
+	}
+}
+
+
+
+.sticky-phone-comparison-table {
+    position: fixed;
+    width: 100%;
+    height: 85%;
+    z-index: 51;
+    transition: all 1s ease;
+
+    &.show-table {
+    	bottom: 12px;
+    	max-height: 83%;
+
+        @media @screen-lg-lower {
+            max-height: 91%;
+            height:91%;
+        }
+
+        @media @screen-md-lower {
+            bottom: 52px;
+            max-height: 85%;
+            height:85%;
+        }
+    }
+
+    &.hide-table {
+        max-height: 0;
+        bottom: 0;
+    }
+
+    .compare-wrapper {
+        overflow-y: auto;
+		overflow-x: hidden;
+        height: 100%;
+    }
+
+    >.container {
+        >.compare-collapse {
+            margin-top: 0;
+        }
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* Phones compare bottom section end here */
+
+//==================== [Element name] ====================
+@media @screen-xs {
+    .compare-wrapper {
+        padding: 15px 0 0 0;
+        .compare-collapse {
+            left: -12px;
+            width: 25%;
+            top: -32px;
+        }
+    }
+    .mega-dropdown {
+        & .body {
+            width: 94%;
+        }
+        & .header {
+            width: 47%;
+        }
+    }
+    .dropdown-menu.dropdown-custom {
+    width: 198%;
+      .header {
+        width: 51%;
+      }
+    }
+
+    .dropdown-menu.dropdown-custom.dropdown-review {
+        width: 100%;
+    }
+
+    .right-panel {
+    .dropdown-menu.dropdown-custom {
+      left: -99%;
+      .header {
+        right: 0;
+      }
+    }
+  }
+  .left-panel {
+    .dropdown-menu.dropdown-custom {
+      .header {
+        left: 1%;
+      }
+    }
+  }
+}
+
+.card {
+    .card-content {
+        h3 {
+            letter-spacing: 0;
+            margin-top: 3px;
+            margin-bottom: 8px;
+        }
+        .ratings-wrapper {
+            .icon-space {
+                margin-left: -5px;
+            }
+        }
+    }
+}
+
+
+/* Compare Page Start */
+
+.card {
+    .com-title {
+        color: @brand-blue;
+        font-size: @font-size-small-p;
+        height: 28px;
+        width: 105px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .ban-orng::before {
+        border-color: transparent @white transparent transparent;
+        border-style: solid;
+        border-width: 10px;
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0px;
+    }
+    .ban-orng {
+        background-color: @brand-gold;
+        padding: 5px 8px;
+        color: @white;
+        font-size: @font-size-small-p;
+        position: relative;
+        line-height: 11px;
+    }
+    .compare-cuz {
+        padding: 0;
+        .current-price {
+            line-height: 33px;
+        }
+        .pay-txt {
+            font-size: @font-size-xxsmall;
+            margin: -3px 0 0 40px;
+            display: block;
+        }
+        .cta-addtocart::before {
+            border-color: @card-gray transparent transparent transparent;
+            border-width: 8px;
+            position: absolute;
+            right: 43%;
+            top: 0;
+        }
+    }
+    th {
+        font-weight: normal;
+    }
+}
+
+.table-wrapper {
+    @media @screen-xs {
+        font-family: @font-family-Neue-Roma;
+    }
+    .table tr > td {
+        border-top: none;
+        border-right: 1px solid @gray-light;
+        vertical-align: middle;
+        width: 32%;
+        text-align: center;
+        font-size:12px;
+    }
+     .table tr > td > span.screen-size {
+        position: relative;
+        left: 30px;
+        bottom: 22px;
+    }
+    .table tr > td > i.ico-m-phones-02 {
+        font-size: 68px;
+    }
+    tbody > tr:nth-of-type(2n+1) {
+        background-color: #f1f1f1;
+    }
+     @media @screen-lg {
+        .table tr > th{
+        	width:20%;
+        }
+    }
+    @media @screen-md {
+        .table tr > th{
+        	width:25%;
+        }
+    }
+    @media @screen-xs {
+        td:nth-child(2) {
+            color: @brand-blue;
+            font-weight: bold;
+        }
+    }
+    @media @screen-sm {
+        td:nth-child(2) {
+            color: @brand-blue;
+            font-weight: bold;
+        }
+    }
+}
+
+@media @screen-md-upper {
+    .table-wrapper {
+        .table tr > td {
+            width: 16.5%;
+        }
+        td:nth-child(1),
+        td:nth-child(3),
+        td:nth-child(5) {
+            color: @brand-blue;
+        }
+        .storage-gb {
+            display: block;
+        }
+    }
+}
+
+@media @screen-md {
+    .normal-price {
+        font-size: @font-size-p!important;
+    }
+    .current-price {
+        font-size: @font-size-ex-large!important;
+    }
+    .normal-price:before {
+        top: 45%!important;
+    }
+}
+
+@media only screen and (min-width:750px) and (max-width: 856px) {
+    .card .compare-cuz .current-price {
+        font-size: @font-size-h5-750!important;
+    }
+    .card .ban-orng {
+        font-size: @font-size-small-below-750;
+    }
+}
+
+@media (min-width: 750px) and (max-width: 924px) {
+    .normal-price-two-lines:before {
+        top: 33% !important;
+    }
+}
+
+@media (min-width: 925px) and (max-width: 979px) {
+    .normal-price-two-lines:before {
+    	left: 12px !important;
+        top: 42% !important;
+    }
+}
+
+@media @screen-lg {
+	.normal-price-two-lines:before {
+		left: 7px !important;
+		top: 48% !important;
+	}
+}
+
+/* Compare Page End */
+
+
+/* Compare Alert Page Start */
+
+.confirm-alert {
+    @media @screen-xs {
+        bottom: 0px;
+    }
+    background-color: black;
+    bottom: 0px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    opacity: 0.8;
+    font-size: @font-size-meidum;
+}
+
+.sticky-compare-phones {
+    transition: all 0.5s ease;
+    position: fixed;
+    width: 100%;
+    padding: 3px 0;
+    height: 40px;
+    left: 0;
+    right: 0;
+    z-index: 51;
+
+	&.expanded{
+		max-height: 80%;
+		bottom: 170px;
+
+        @media @screen-md-lower {
+            bottom: 214px;
+        }
+
+        @media @screen-sm-lower {
+            bottom: 248px;
+        }
+
+	}
+	&.collapsed{
+		/*max-height: 0; */
+		bottom: 0;
+	}
+}
+
+#compareContent{
+	position:relative;
+	top:1px;
+}
+
+/* Compare Alert Page End */
+
+
+/* Phone PDP Learn Start */
+
+.phone-feature {
+    background-color: @card-gray;
+    padding-bottom: 10px;
+    @media @screen-xs {
+        height: 60px;
+    }
+    @media @screen-xs {
+            i{
+                position: relative;
+                top: 5px;
+            }
+            i.ico-m-card {
+            top: 0px;
+            }
+        }
+    .icon {
+        font-size: 25px;
+        width: 35px;
+        bottom: 10px;
+        @media @screen-xs {
+            font-size: 20px;
+        }
+    }
+}
+.m-r-2 {
+    margin-right: 2px;
+}
+.m-r-3{
+	margin-right: 3px;
+}
+.box-size {
+    width: 422px;
+    height: 13px;
+}
+
+.current-price {
+    line-height: 40px;
+}
+
+.card .product-pricing .offers-text {
+    margin: -10px 0 0 45px;
+    display: block;
+    font-size: 10px;
+}
+
+.card .card-price > div,
+.card .card-price .cta-btn-grey,
+.card .card-price .cta-addtocart {
+    height: 55px;
+}
+.description .modalLink{
+	color: #333092;
+	font-weight:bold;
+	display: inline-block;
+    margin-bottom: 10px;
+}
+.price-details-modal hr{
+    border-top: 1px solid #eee;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.price-details-modal .crt-items-list{
+	margin:5px 10px;
+}
+.price-details-modal .crt-items-list td{
+	font-size: 12px;
+    color: #646464;
+    width: 100%;
+    padding: 5px 0;
+}
+.text-right{
+	text-align:right;
+}
+.price-details-modal {
+	.modal-content{
+        
+        height: 270px;
+        
+        @media (min-width: 320px) and (max-width: 359px) {
+		  	height: 290px;
+		  	
+        }
+        @media (min-width: 360px) {
+		  	height: 260px;
+		  	
+        }
+    }
+}
+.price-details-modal .modal-body{
+	padding: 25px 65px;
+	 @media (min-width: 320px) and (max-width: 375px) {
+		  	padding: 25px 34px;
+		  	
+     }
+}
+.promotions {
+    background-color: @white;
+    height: 70px;
+    padding-top: 16px;
+    @media @screen-xs {
+        height: 115px;
+    }
+    .icon {
+        font-size: 30px;
+    }
+}
+
+li:last-child {
+    margin-right: 0;
+}
+
+.product-color,
+.color-picker {
+    @media @screen-xs {
+        text-align: center;
+    }
+}
+
+.card-content {
+    .share-button {
+        border: none;
+        background: none;
+        color: @gray;
+        font-size: 24px;
+    }
+}
+
+.card {
+    .card-content {
+        &.share {
+            padding-top: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        h3 {
+            @media @screen-md {
+                height: 35px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-wrap: break-word;
+            }
+        }
+    }
+}
+
+#phone-pdp-learn {
+    .card .card-content ul.specs {
+        height: unset;
+        max-height: unset;
+    }
+    .review-row .review-description {
+        width: unset;
+    }
+    .table-wrapper td:nth-child(2) {
+        color: unset;
+        font-weight: normal;
+    }
+    .table-wrapper td:nth-child(1),
+    .table-wrapper td:nth-child(3),
+    .table-wrapper td:nth-child(5) {
+        color: @breadcumb-link;
+        font-weight: bold;
+        .icon {
+            font-size: 20px;
+            position:relative;
+            top:5px;
+        }
+    }
+    .table-wrapper .table tr > td {
+        text-align: left;
+        padding-left: 20px;
+        height: 50px;
+    }
+    .inner-acc-panel {
+        .ico-m-arrow-up,
+        .ico-m-arrow-down {
+            font-size: 20px;
+        }
+        h1.page-title {
+            text-transform: none;
+        }
+    }
+    accordion-group .collapse-body .inner-acc-panel .sub-container .content a,
+    .acc-panel-group .collapse-body .inner-acc-panel .sub-container .content a {
+        text-decoration: none;
+    }
+    .card .card-content .image > img {
+        height: auto;
+        margin: auto;
+        max-height: 340px;
+        max-width: 90px;
+    	margin-bottom: 30px;
+        @media @screen-xs {
+            max-height: 260px;
+        }
+    }
+    .card .card-content h3 {
+        /*letter-spacing: 1px;*/
+        font-size: @font-size-p;
+    }
+}
+
+.acc-panel-group .acc-panel .acc-panel-heading .acc-panel-title > button.faq-question {
+    color: @gray-dark;
+    text-transform: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.question-text {
+    @media @screen-xs {
+        white-space: normal;
+        margin: 0;
+        width: unset;
+        text-align: left;
+    }
+    @media (max-width: 400px) {
+        width: 280px;
+    }
+    @media (max-width: 370px) {
+        width: 230px;
+    }
+}
+
+.faq-content {
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.head-banner {
+    background: no-repeat 88% 90%;
+    height: 326px;
+
+    @media @screen-sm-lower {
+        background: no-repeat 0 0/cover;
+        height: 210px;
+    }
+
+    .banner-caption {
+        width: 300px;
+        margin: 90px 0 0 5%;
+
+        h3 {
+            font-family: @font-family-Neue-Black;
+            font-size: @font-size-ex-large;
+        }
+
+        p,
+        h4 {
+            font-size: @font-size-p;
+        }
+
+        h4 {
+            letter-spacing: 1px;
+        }
+
+        @media @screen-sm-lower {
+            width: 165px;
+            margin: 45px 0 0 15px;
+
+            h3 {
+                font-size: @font-size-base;
+            }
+
+            p {
+                font-size: @font-size-h6-750;
+            }
+
+            h4 {
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+.phone-design-banner {
+    position: relative;
+
+    @media @screen-xs {
+        img {
+            height: 270px;
+        }
+    }
+
+    .phone-design-caption {
+        position: absolute;
+        top: 4%;
+        left: 6%;
+        width: 320px;
+
+        @media @screen-xs {
+            width: 235px;
+        }
+
+        h3 {
+            font-family: @font-family-Neue-Bold;
+            font-size: @font-size-large;
+
+            @media @screen-xs {
+                font-size: @font-size-h5-750;
+            }
+        }
+    }
+}
+
+.half-row-caption {
+    margin: 12% auto 0;
+    width: 324px;
+
+    @media only screen and @screen-md-lower {
+        width: auto;
+        margin: 5% 20px;
+    }
+
+    h3 {
+        font-family: @font-family-Neue-Bold;
+        font-size: @font-size-meidum;
+    }
+
+    ul {
+        color: @gray-light-border;
+        list-style: disc;
+    }
+    li {
+        list-style-type: disc;
+    }
+}
+.radio {
+    label {
+        padding-left: 5px;
+        &::after {
+            top: -14px;
+        }
+    }
+}
+
+.font-size-11 {
+    font-size: @font-size-small-p;
+}
+
+.phone-performance-banner {
+    position: relative;
+
+    .phone-performance-caption {
+        position: absolute;
+        top: 4%;
+        left: 6%;
+        width: 160px;
+
+        i {
+            font-size: @font-size-h2-750;
+        }
+
+        h3 {
+            font-family: @font-family-Neue-Bold;
+            font-size: @font-size-large;
+            @media @screen-xs {
+                font-size: @font-size-h5-750;
+            }
+        }
+
+        @media @screen-xs {
+            width: 240px;
+            p {
+                font-size: @font-size-small-p;
+            }
+        }
+    }
+}
+
+.one-third-row-caption {
+    margin: 45% auto 7%;
+    width: 170px;
+
+    @media only screen and @screen-md-lower {
+        width: auto;
+        margin: 5% 20px;
+    }
+
+    h3 {
+        font-family: @font-family-Neue-Bold;
+        font-size: @font-size-meidum;
+    }
+}
+
+.mod-cart-fade {
+    background-color: #000000;
+    height: 100%;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+}
+
+.z-index-55
+{z-index: 55;
+}
+
+.offer-avail{
+    height :21px;
+}
+
+.messageTitle {
+    color: #F89C29;
+    text-transform: uppercase;
+    font-size: @font-size-meidum;
+    font-family: @font-family-Neue-Bold;
+}
+
+.card .card-price .product-pricing .strike-price::before {
+     left: 12px;
+     top:21px
+}
+
+/* TODO: Need to remove after getting corrections from HTML team */
+.rating{
+    margin-left:-8px;
+    @media @screen-xs {
+                margin-left:-8px;
+            }
+}
+/* Phone PDP Learn End */
+
+.filterSelect:hover{
+    background-color : #F89C29;
+}
+
+.set-height {
+  position: absolute;
+  z-index:50;
+}
+
+.falg4gtest{
+  height: 39px!important;
+  width: auto !important;
+  position: absolute;
+  top:180px; /*need to fix this using common property*/
+  @media @screen-md{
+    top:185px;
+  }
+  @media @screen-xs{
+    top:185px;
+  }
+}
+
+.sim-compatible:nth-child(1) {
+   padding-right:5px;
+   @media @screen-xs {
+    padding-right:10px;
+    }
+}
+.sim-compatible:nth-child(2) {
+   padding-left:5px;
+   @media @screen-xs {
+   padding-left:10px;
+   }
+}
+.width-200 {
+    width: 200px;
+}

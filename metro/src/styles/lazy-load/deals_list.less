@@ -1,0 +1,194 @@
+@import "../common/shared/variables.less";
+@import "../common/shared/mixins.less";
+@import "../common/shared/elements.less";
+
+#deals-list {
+
+    //==================== [Element name] ====================
+
+    @media @screen-xs {
+    }
+    @media @screen-sm {
+    }
+    @media @screen-md {
+    }
+    @media @screen-lg {
+    }
+    @media @screen-sm-upper {
+    }
+    @media @screen-md-upper {
+    }
+    @media @screen-sm-lower{
+    }
+    @media @screen-md-lower{
+    }
+}
+.deals-wrap    {
+    background:@card-gray ;
+}
+.twotxt-wrap{
+    h1{
+        font-family:@font-family-Neue-Black;
+        font-size:65px;
+        color:@brand-orange;
+        margin: 130px 0 0;
+        letter-spacing: -1px;
+    }
+    h2{
+        font-size:@font-size-h1;
+        color: @brand-blue;
+        margin: 0;        
+    }
+    p{
+        font-size:@font-size-small-p;
+    } 
+    span{
+        color: @brand-blue; 
+        font-family: @font-family-Neue-Bold-Cn;
+        font-size:@font-size-meidum;
+    }
+} 
+.dprod-img{
+    padding:24px 0 0 13%;
+    max-width: 100%;    
+}
+.deal-blue-gradiant,.deal-blue-gradiant2{
+    background: #1e113b;
+    background: -moz-linear-gradient(top, #1e113b 5%, #382a70 50%, #180f28 100%); 
+    background: -webkit-linear-gradient(top, #1e113b 5%, #382a70 50%, #180f28 100%);
+    background: linear-gradient(to bottom, #1e113b 0%,#382a70 50%,#180f28 100%);
+    background: -moz-linear-gradient(top, #1e113b 5%, #382a70 50%, #180f28 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e113b', endColorstr='#180f28',GradientType=0 );
+}
+.deal-blue-gradiant{
+    padding:27px 0 23px;
+    h3{
+        font-size: 53px;
+        color:@white;
+        line-height:50px;
+        letter-spacing: -1px;
+    }
+    h4{
+        font-size: 49px;
+        color:@yellow-fa;
+        font-family:@font-family-Neue-Black;
+        letter-spacing: -2px;
+        sup{
+            font-size:@font-size-xxlarge;
+        }    
+    }
+    span a{
+        color:@white;
+    }   
+}
+.deal-mob-bg{
+    background: url('@{content-dam-path-deals}/deals-mob-bg.png') repeat-x;
+    padding:26px 0 22px;
+    h2{
+        font-size: 44px;
+        color:@yellow-fa;
+        font-family:@font-family-Neue-Black;
+        line-height:42px;
+        span{
+            font-size: 51px;
+        }   
+    }
+    h3{
+        font-size:@font-size-largesmall;
+        color:@brand-blue;
+        span{
+            font-family:@font-family-Neue-Black;
+        }     
+    }
+}
+.deal-maxic-texture{
+    background: url('@{content-dam-path-deals}/maxico-texture.jpg') repeat-x;
+    padding: 12px 0 22px;    
+    .maxic-map{
+        background: url('@{content-dam-path-deals}/deals-map.png') no-repeat;
+        width:191px;
+        margin: 0 auto;
+        padding:35px 0 0;
+    }   
+    h2{
+        font-size: 36px;
+        color:@yellow-fa;
+        font-family:@font-family-Neue-Black;
+        line-height:26px;
+        span{
+            font-size:@font-size-ex-large;
+            sup{
+                font-size:@font-size-small-p; 
+                top: -10px;
+            } 
+        }   
+    }
+
+}
+.deal-blue-gradiant2{
+    padding:24px 0 17px;
+    h2{
+        font-size:78px;
+        color:@yellow-fa;       
+        font-family:@font-family-Neue-Black;
+        line-height: 57px;
+        sup{
+            font-size: 45px;
+        }   
+    }
+    h3{
+        font-size:@font-size-large;
+        color:@white;
+        line-height: 22px;
+        span{
+            font-family:@font-family-Neue-Black;
+            font-size:@font-size-lead;
+        }    
+    }
+    span a{
+        color:@white;
+    }
+}
+span a:hover{
+    color:@brand-gold;
+}
+.rebate-wid {
+    width:258px;
+    padding: 8px 12px;
+}
+@media screen and (min-device-width: 750px) and (max-device-width: 856px) {
+    .twotxt-wrap {
+        padding-left:11%;
+    }  
+}
+@media (max-width : 749px){
+    .twotxt-wrap {
+        padding: 0;
+        width: 245px;
+        margin:10px auto 0;
+        h1{
+            font-size:48px;
+        }
+        h2{
+            font-size:@font-size-lead-mid-750;
+        }
+    }   
+    .dprod-wrap{
+        width:275px;
+        margin: 0 auto;
+        position: relative;      
+        .dprod-img{
+            padding:0 15px 0 15px;
+        }
+        span{
+            position: absolute;
+            right: 6%;
+            bottom:90px;
+            font-family: @font-family-Neue-Bold-Cn;
+        }        
+    }
+}
+
+#deals{
+    font-size: 12px;
+}
