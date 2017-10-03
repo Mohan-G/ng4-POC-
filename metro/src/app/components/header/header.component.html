@@ -1,5 +1,120 @@
-<h1 class="text-center">Hobbies</h1>
-<ul>
-    <li *ngFor="let hobby of hobbies;let i=index">{{i+1}} {{hobby}}</li>
-
-</ul>
+<header>
+    <div id="top-header" class="hidden-xs hidden-sm">
+        <div class="container">
+            <div class="top-navigation">
+                <nav>
+                    <ul class="horizontal text-right">
+                        <!-- ngRepeat: globalHeaderLink in headerCtrl.contentData.globalNavs -->
+                        <li ng-repeat="globalHeaderLink in headerCtrl.contentData.globalNavs" class="ng-scope" style="">
+                            <!-- ngIf: globalHeaderLink.name!='In English' && globalHeaderLink.name!='En Español' --><a ng-if="globalHeaderLink.name!='In English' &amp;&amp; globalHeaderLink.name!='En Español'" ng-href="/coverage.html" title="Coverage Map" ng-click="headerCtrl.openLinkInWindow(globalHeaderLink.targetUrl,globalHeaderLink.newTab,$event)"
+                                pdl_track_headernavigation="Coverage Map" class="ng-binding ng-scope" href="/coverage.html">Coverage Map</a>
+                            <!-- end ngIf: globalHeaderLink.name!='In English' && globalHeaderLink.name!='En Español' -->
+                            <!-- ngIf: globalHeaderLink.name=='In English' || globalHeaderLink.name=='En Español' -->
+                        </li>
+                        <!-- end ngRepeat: globalHeaderLink in headerCtrl.contentData.globalNavs -->
+                        <li ng-repeat="globalHeaderLink in headerCtrl.contentData.globalNavs" class="ng-scope">
+                            <!-- ngIf: globalHeaderLink.name!='In English' && globalHeaderLink.name!='En Español' -->
+                            <!-- ngIf: globalHeaderLink.name=='In English' || globalHeaderLink.name=='En Español' --><a ng-if="globalHeaderLink.name=='In English' || globalHeaderLink.name=='En Español'" title="Visit this page in Spanish" mporgnav="" ng-href="https://hola.metropcs.com" onclick="return switchLanguage('es');function switchLanguage(lang){MP.SrcUrl=decodeURIComponent('mp_js_orgin_url');MP.UrlLang='mp_js_current_lang';MP.init();MP.switchLanguage(MP.UrlLang==lang?'en':lang);return false;}"
+                                pdl_track_headernavigation="En Español" class="ng-binding ng-scope" href="https://hola.metropcs.com">En Español</a>
+                            <!-- end ngIf: globalHeaderLink.name=='In English' || globalHeaderLink.name=='En Español' -->
+                        </li>
+                        <!-- end ngRepeat: globalHeaderLink in headerCtrl.contentData.globalNavs -->
+                        <li ng-repeat="globalHeaderLink in headerCtrl.contentData.globalNavs" class="ng-scope">
+                            <!-- ngIf: globalHeaderLink.name!='In English' && globalHeaderLink.name!='En Español' --><a ng-if="globalHeaderLink.name!='In English' &amp;&amp; globalHeaderLink.name!='En Español'" ng-href="/shop/wishlist" title="Browse your Wishlist" ng-click="headerCtrl.openLinkInWindow(globalHeaderLink.targetUrl,globalHeaderLink.newTab,$event)"
+                                pdl_track_headernavigation="Wishlist" class="ng-binding ng-scope" href="/shop/wishlist">Wishlist</a>
+                            <!-- end ngIf: globalHeaderLink.name!='In English' && globalHeaderLink.name!='En Español' -->
+                            <!-- ngIf: globalHeaderLink.name=='In English' || globalHeaderLink.name=='En Español' -->
+                        </li>
+                        <!-- end ngRepeat: globalHeaderLink in headerCtrl.contentData.globalNavs -->
+                        <li ng-repeat="globalHeaderLink in headerCtrl.contentData.globalNavs" class="ng-scope">
+                            <!-- ngIf: globalHeaderLink.name!='In English' && globalHeaderLink.name!='En Español' --><a ng-if="globalHeaderLink.name!='In English' &amp;&amp; globalHeaderLink.name!='En Español'" ng-href="/account/sign-in.html" title="My Account" ng-click="headerCtrl.openLinkInWindow(globalHeaderLink.targetUrl,globalHeaderLink.newTab,$event)"
+                                pdl_track_headernavigation="My Account" class="ng-binding ng-scope" href="/account/sign-in.html">My Account</a>
+                            <!-- end ngIf: globalHeaderLink.name!='In English' && globalHeaderLink.name!='En Español' -->
+                            <!-- ngIf: globalHeaderLink.name=='In English' || globalHeaderLink.name=='En Español' -->
+                        </li>
+                        <!-- end ngRepeat: globalHeaderLink in headerCtrl.contentData.globalNavs -->
+                        <li><a ng-class="headerCtrl.itemCount?'cart-link-bold':''" ng-href="/shop/review" title="" ng-mouseover="headerCtrl.miniCart=true" ng-click="headerCtrl.miniCart=true" class="ng-binding" href="/shop/review"><i class="icon-m_cart_full m-r-5"></i>Cart (0 items)</a></li>
+                        <!-- ngIf: !headerCtrl.userSignedInFlag -->
+                        <li ng-if="!headerCtrl.userSignedInFlag" class="ng-scope"><a ng-href="/account/sign-in.html" title="Login" target="_self" class="ng-binding" href="/account/sign-in.html">Login</a></li>
+                        <!-- end ngIf: !headerCtrl.userSignedInFlag -->
+                        <!-- ngIf: headerCtrl.userSignedInFlag -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div id="main-header" class="content-wrapper blue">
+        <div class="container">
+            <nav><a class="pull-left m-t-15 logo cursor" aria-label="MetroPCS logo" title="MetroPCS" ui-sref="index" href="/"><i class="icon-m_logo" ng-click="" pdl_track_headernavigation="MetroPCS" title="MetroPCS" alt="MetroPCS"></i></a>
+                <nav click-elsewhere="headerCtrl.hideContentPanel()">
+                    <ul class="nav navbar-nav">
+                        <!-- ngRepeat: primaryLink in headerCtrl.contentData.primaryNav -->
+                        <li ng-repeat="primaryLink in headerCtrl.contentData.primaryNav" class="ng-scope" style=""><span ng-class="headerCtrl.showonDevice({&quot;name&quot;:&quot;SHOP&quot;,&quot;targetUrl&quot;:&quot;/&quot;,&quot;newTab&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;tablet&quot;:&quot;on&quot;,&quot;miniTablet&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;secondarylink&quot;:[{&quot;text&quot;:&quot;PHONES&quot;,&quot;state&quot;:&quot;shop.phones&quot;,&quot;link&quot;:&quot;/shop/phones&quot;,&quot;bannerlink&quot;:&quot;/content/metro/en/banner/phones&quot;},{&quot;text&quot;:&quot;PLANS&quot;,&quot;state&quot;:&quot;shop.plans&quot;,&quot;link&quot;:&quot;/shop/plans&quot;,&quot;bannerlink&quot;:&quot;/content/metro/en/banner/plans&quot;},{&quot;text&quot;:&quot;ACCESSORIES&quot;,&quot;state&quot;:&quot;shop.accessories&quot;,&quot;link&quot;:&quot;/shop/accessories&quot;,&quot;bannerlink&quot;:&quot;/content/metro/en/banner/accessories&quot;},{&quot;text&quot;:&quot;SERVICES&quot;,&quot;state&quot;:&quot;shop.services&quot;,&quot;link&quot;:&quot;/shop/services&quot;,&quot;bannerlink&quot;:&quot;/content/metro/en/banner/services&quot;},{&quot;text&quot;:&quot;WHY METRO&quot;,&quot;state&quot;:&quot;&quot;,&quot;link&quot;:&quot;/../why.html&quot;,&quot;bannerlink&quot;:&quot;/content/metro/en/banner/whyMetro&quot;},{&quot;text&quot;:&quot;Deals&quot;,&quot;state&quot;:&quot;shop.deals&quot;,&quot;link&quot;:&quot;/shop/deals&quot;,&quot;bannerlink&quot;:&quot;/content/metro/en/banner/deals&quot;}]})"><button ng-class="{active: $index == headerCtrl.activeMenuItem &amp;&amp; !headerCtrl.search}" ng-click="headerCtrl.toggle(primaryLink.name, $index)" pdl_track_headernavigation="SHOP" class="ng-binding">SHOP</button></span></li>
+                        <!-- end ngRepeat: primaryLink in headerCtrl.contentData.primaryNav -->
+                        <li ng-repeat="primaryLink in headerCtrl.contentData.primaryNav" class="ng-scope"><span ng-class="headerCtrl.showonDevice({&quot;name&quot;:&quot;SUPPORT&quot;,&quot;targetUrl&quot;:&quot;/&quot;,&quot;newTab&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;tablet&quot;:&quot;on&quot;,&quot;miniTablet&quot;:&quot;&quot;,&quot;mobile&quot;:&quot;&quot;,&quot;secondarylink&quot;:[{&quot;text&quot;:&quot;CONTACT US&quot;,&quot;state&quot;:&quot;&quot;,&quot;link&quot;:&quot;/contact-us.html&quot;,&quot;bannerlink&quot;:&quot;/content/metro/en/banner/support/contactUs&quot;},{&quot;text&quot;:&quot;FAQs&quot;,&quot;state&quot;:&quot;&quot;,&quot;link&quot;:&quot;/../support/faq&quot;,&quot;bannerlink&quot;:&quot;/content/metro/en/banner/support/faq&quot;},{&quot;text&quot;:&quot;USER GUIDES&quot;,&quot;state&quot;:&quot;&quot;,&quot;link&quot;:&quot;/content/dam/mpcs/faqsandsupport/lg/LG-Stylo-2-Plus-UserGuide.pdf&quot;,&quot;bannerlink&quot;:&quot;/content/metro/en/banner/support/user-guide&quot;},{&quot;text&quot;:&quot;ONLINE ORDERS&quot;,&quot;state&quot;:&quot;&quot;,&quot;link&quot;:&quot;/support/shopping-online/shopping-online.html&quot;,&quot;bannerlink&quot;:&quot;/content/metro/en/banner/support/online-orders&quot;}]})"
+                                class="hidden-sm hidden-xs"><button ng-class="{active: $index == headerCtrl.activeMenuItem &amp;&amp; !headerCtrl.search}" ng-click="headerCtrl.toggle(primaryLink.name, $index)" pdl_track_headernavigation="SUPPORT" class="ng-binding">SUPPORT</button></span></li>
+                        <!-- end ngRepeat: primaryLink in headerCtrl.contentData.primaryNav -->
+                        <li ng-repeat="primaryLink in headerCtrl.contentData.primaryNav" class="ng-scope"><span ng-class="headerCtrl.showonDevice({&quot;name&quot;:&quot;SUPPORT&quot;,&quot;targetUrl&quot;:&quot;/&quot;,&quot;newTab&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;&quot;,&quot;miniTablet&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;secondarylink&quot;:[{&quot;text&quot;:&quot;CONTACT US&quot;,&quot;state&quot;:&quot;&quot;,&quot;link&quot;:&quot;/../contact-us.html&quot;,&quot;bannerlink&quot;:&quot;/content/metro/en/banner/support/contactUs&quot;},{&quot;text&quot;:&quot;FAQs&quot;,&quot;state&quot;:&quot;&quot;,&quot;link&quot;:&quot;/../support/faq&quot;,&quot;bannerlink&quot;:&quot;/content/metro/en/banner/support/faq&quot;}]})"
+                                class="hidden-lg hidden-md"><button ng-class="{active: $index == headerCtrl.activeMenuItem &amp;&amp; !headerCtrl.search}" ng-click="headerCtrl.toggle(primaryLink.name, $index)" pdl_track_headernavigation="SUPPORT" class="ng-binding">SUPPORT</button></span></li>
+                        <!-- end ngRepeat: primaryLink in headerCtrl.contentData.primaryNav -->
+                        <li ng-repeat="primaryLink in headerCtrl.contentData.primaryNav" class="ng-scope"><span ng-class="headerCtrl.showonDevice({&quot;name&quot;:&quot;PAYMENT&quot;,&quot;targetUrl&quot;:&quot;/../bill-pay.html&quot;,&quot;newTab&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;on&quot;,&quot;tablet&quot;:&quot;on&quot;,&quot;miniTablet&quot;:&quot;&quot;,&quot;mobile&quot;:&quot;&quot;,&quot;secondarylink&quot;:[]})"
+                                class="hidden-sm hidden-xs"><button ng-class="{active: $index == headerCtrl.activeMenuItem &amp;&amp; !headerCtrl.search}" ng-click="headerCtrl.toggle(primaryLink.name, $index)" pdl_track_headernavigation="PAYMENT" class="ng-binding">PAYMENT</button></span></li>
+                        <!-- end ngRepeat: primaryLink in headerCtrl.contentData.primaryNav -->
+                        <li ng-repeat="primaryLink in headerCtrl.contentData.primaryNav" class="ng-scope"><span ng-class="headerCtrl.showonDevice({&quot;name&quot;:&quot;PAYMENT&quot;,&quot;targetUrl&quot;:&quot;/bill-pay.html&quot;,&quot;newTab&quot;:&quot;&quot;,&quot;hoverText&quot;:&quot;&quot;,&quot;desktop&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;&quot;,&quot;miniTablet&quot;:&quot;on&quot;,&quot;mobile&quot;:&quot;on&quot;,&quot;secondarylink&quot;:[]})"
+                                class="hidden-lg hidden-md"><button ng-class="{active: $index == headerCtrl.activeMenuItem &amp;&amp; !headerCtrl.search}" ng-click="headerCtrl.toggle(primaryLink.name, $index)" pdl_track_headernavigation="PAYMENT" class="ng-binding">PAYMENT</button></span></li>
+                        <!-- end ngRepeat: primaryLink in headerCtrl.contentData.primaryNav -->
+                    </ul>
+                    <section id="megamenu" uib-collapse="!headerCtrl.isCollapsed" class="m-t-70 m-t-0-sm m-t-0-xs p-0 collapse" style="height: 0px;">
+                        <div class="desktop hidden-xs hidden-sm">
+                            <!-- ngIf: headerCtrl.hasSubmenu -->
+                        </div>
+                        <div class="menuContent">
+                            <div class="container slider" compile-html="headerCtrl.bannerResponse"></div>
+                        </div>
+                        <div class="mobile visible-xs visible-sm">
+                            <div class="container">
+                                <!-- ngIf: headerCtrl.hasSubmenu -->
+                                <!-- ngRepeat: subMenu in headerCtrl.activeSubmenu -->
+                                <!-- ngIf: !headerCtrl.hasSubmenu -->
+                                <div class="menuContent ng-scope" ng-if="!headerCtrl.hasSubmenu">
+                                    <div class="container">
+                                        <p class="ng-binding"></p>
+                                    </div>
+                                </div>
+                                <!-- end ngIf: !headerCtrl.hasSubmenu -->
+                            </div>
+                        </div>
+                    </section>
+                </nav>
+                <div class="pull-right">
+                    <ul class="horizontal m-b-0">
+                        <li class="find-store hidden-xs hidden-sm"><a class="m-t-5 m-r-10 pull-left" title="Store locator" href="javascript:void(0);" aria-label="Find a store"><i ng-class="headerCtrl.contentData.findaStoreIcon" alt="Store locator" class="icon-m_store_press_full" style=""></i></a>
+                            <div class="p-l-30 ng-binding">Your Store:</div>
+                            <!-- ngIf: headerCtrl.currentLoc -->
+                            <!-- ngIf: !headerCtrl.currentLoc -->
+                            <div class="p-l-30 ng-binding ng-scope" ng-if="!headerCtrl.currentLoc">Use your <a href="javascript:void(0);" class="text-orange change_locate ng-binding" ng-click="headerCtrl.getAndSaveStoreLocation(); headerCtrl.getCurrentLocationHomePage()" pdl_track_headernavigation="storelocation" title="Your current location">Current Location</a>                                <span class="m-r-5 ng-binding">or</span><a class="text-orange ng-binding" ng-href="/find-store.html" ng-click="headerCtrl.openLinkInWindow(headerCtrl.contentData.findastoreUrl, headerCtrl.contentData.findaStoreNewTab,$event)"
+                                    pdl_track_headernavigation="Find a Store" title="Look for a store near you" href="/find-store.html">Find a Store</a></div>
+                            <!-- end ngIf: !headerCtrl.currentLoc -->
+                        </li>
+                        <li class="search m-l-5-nd m-l-10-lg hidden-xs hidden-sm" click-elsewhere="headerCtrl.search=false;"><button title="Search" ng-class="{active: headerCtrl.search == true}" ng-click="headerCtrl.onSearchClick();" type="button" aria-label="Search"><i class="icon-m_search_full ui-search" pdl_track_headernavigation="searchFinder" title="Search" alt="Search MetroPCS"></i></button>
+                            <section id="search" uib-collapse="!headerCtrl.search" class="p-0 container collapse" aria-expanded="false" aria-hidden="true" style="height: 0px;">
+                                <div class="mobile">
+                                    <div class="menuContent">
+                                        <div class="container search-m-container">
+                                            <div class="search-header">
+                                                <h2 class="ng-binding">Search Metropcs</h2><button ng-click="headerCtrl.search=!headerCtrl.search; " title="Close Search Bar" class="close" aria-label="Close search"><i class="icon-m-close"></i></button></div>
+                                            <div class="input-group ng-pristine ng-valid ng-valid-pattern" ng-form="" name="searchform"><input class="form-control place-holder ng-pristine ng-untouched ng-valid ng-empty ng-valid-pattern" ng-keyup="!headerCtrl.searchText.length || !searchform.searchText.$valid || $event.keyCode == 13 &amp;&amp; headerCtrl.onSearchPanelClick()"
+                                                    name="searchText" ng-model="headerCtrl.searchText" placeholder="Start typing" title="Input your search" aria-label="Search Text" ng-pattern="^[a-zA-Z0-9\s]*$"> <a href="javascript:void(0);" ng-click="!headerCtrl.searchText.length || !searchform.searchText.$valid || headerCtrl.onSearchPanelClick()"
+                                                    class="input-group-addon btn btn-blue" ng-disabled="!headerCtrl.searchText.length || !searchform.searchText.$valid" title="Start Search" aria-label="Search" disabled="disabled"><i class="icon-m_arrow2"></i></a></div>
+                                            <div class="col-xs-12 p-0 text-red ng-binding ng-scope ng-hide" ng-show="!searchform.searchText.$valid">Please try your search again. Special characters will return an error.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
